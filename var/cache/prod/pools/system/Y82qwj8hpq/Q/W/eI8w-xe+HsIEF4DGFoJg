@@ -1,0 +1,120 @@
+<?php //0c13a36de9d91c2a5428db93f4ce72b3
+
+return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\CachedValueInterface { public function getValue(): mixed { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            'sqlFinalizer' => [
+                $o[1],
+            ],
+            'resultSetMapping' => [
+                $o[2],
+            ],
+            'parameterMappings' => [
+                [
+                    'copro' => [
+                        0,
+                    ],
+                    'role' => [
+                        1,
+                    ],
+                ],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer' => [
+            'sql' => [
+                1 => 'SELECT u0_.id AS id_0, u0_.email AS email_1, u0_.roles AS roles_2, u0_.password AS password_3, u0_.nom AS nom_4, u0_.prenom AS prenom_5, u0_.telephone AS telephone_6, u0_.horaires_gardien AS horaires_gardien_7, u0_.statut_occupation AS statut_occupation_8, u0_.is_verified AS is_verified_9, u0_.copropriete_id AS copropriete_id_10 FROM user u0_ WHERE u0_.copropriete_id = ? AND u0_.roles LIKE ?',
+            ],
+        ],
+        'stdClass' => [
+            'aliasMap' => [
+                2 => [
+                    'u' => 'App\\Entity\\User',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'email_1' => 'email',
+                    'roles_2' => 'roles',
+                    'password_3' => 'password',
+                    'nom_4' => 'nom',
+                    'prenom_5' => 'prenom',
+                    'telephone_6' => 'telephone',
+                    'horaires_gardien_7' => 'horairesGardien',
+                    'statut_occupation_8' => 'statutOccupation',
+                    'is_verified_9' => 'isVerified',
+                ],
+            ],
+            'columnAliasMappings' => [
+                2 => [
+                    'App\\Entity\\User' => [
+                        'u' => [
+                            'id' => 'id_0',
+                            'email' => 'email_1',
+                            'roles' => 'roles_2',
+                            'password' => 'password_3',
+                            'nom' => 'nom_4',
+                            'prenom' => 'prenom_5',
+                            'telephone' => 'telephone_6',
+                            'horairesGardien' => 'horaires_gardien_7',
+                            'statutOccupation' => 'statut_occupation_8',
+                            'isVerified' => 'is_verified_9',
+                        ],
+                    ],
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'copropriete_id_10' => 'integer',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'u' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'copropriete_id_10' => 'copropriete_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'u',
+                    'email_1' => 'u',
+                    'roles_2' => 'u',
+                    'password_3' => 'u',
+                    'nom_4' => 'u',
+                    'prenom_5' => 'u',
+                    'telephone_6' => 'u',
+                    'horaires_gardien_7' => 'u',
+                    'statut_occupation_8' => 'u',
+                    'is_verified_9' => 'u',
+                    'copropriete_id_10' => 'u',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\User',
+                    'email_1' => 'App\\Entity\\User',
+                    'roles_2' => 'App\\Entity\\User',
+                    'password_3' => 'App\\Entity\\User',
+                    'nom_4' => 'App\\Entity\\User',
+                    'prenom_5' => 'App\\Entity\\User',
+                    'telephone_6' => 'App\\Entity\\User',
+                    'horaires_gardien_7' => 'App\\Entity\\User',
+                    'statut_occupation_8' => 'App\\Entity\\User',
+                    'is_verified_9' => 'App\\Entity\\User',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); } }];

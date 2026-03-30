@@ -1,0 +1,107 @@
+<?php //ed70a09f1f1b19bab6e63527b1e6d43f
+
+return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\CachedValueInterface { public function getValue(): mixed { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            'sqlFinalizer' => [
+                $o[1],
+            ],
+            'resultSetMapping' => [
+                $o[2],
+            ],
+            'parameterMappings' => [
+                [
+                    'copro' => [
+                        0,
+                    ],
+                ],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer' => [
+            'sql' => [
+                1 => 'SELECT b0_.id AS id_0, b0_.numero_hexa AS numero_hexa_1, b0_.status AS status_2, b0_.date_activation AS date_activation_3, b0_.motif_remplacement AS motif_remplacement_4, b0_.date_remplacement AS date_remplacement_5, b0_.lot_id AS lot_id_6, b0_.remplacebadge_id AS remplacebadge_id_7, b0_.couleur_id AS couleur_id_8 FROM badge b0_ INNER JOIN lot l1_ ON b0_.lot_id = l1_.id INNER JOIN batiment b2_ ON l1_.batiment_id = b2_.id WHERE b2_.copropriete_id = ? ORDER BY b0_.id DESC',
+            ],
+        ],
+        'stdClass' => [
+            'aliasMap' => [
+                2 => [
+                    'b' => 'App\\Entity\\Badge',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'numero_hexa_1' => 'numeroHexa',
+                    'status_2' => 'status',
+                    'date_activation_3' => 'dateActivation',
+                    'motif_remplacement_4' => 'motifRemplacement',
+                    'date_remplacement_5' => 'dateRemplacement',
+                ],
+            ],
+            'columnAliasMappings' => [
+                2 => [
+                    'App\\Entity\\Badge' => [
+                        'b' => [
+                            'id' => 'id_0',
+                            'numeroHexa' => 'numero_hexa_1',
+                            'status' => 'status_2',
+                            'dateActivation' => 'date_activation_3',
+                            'motifRemplacement' => 'motif_remplacement_4',
+                            'dateRemplacement' => 'date_remplacement_5',
+                        ],
+                    ],
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'lot_id_6' => 'integer',
+                    'remplacebadge_id_7' => 'integer',
+                    'couleur_id_8' => 'integer',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'b' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'lot_id_6' => 'lot_id',
+                    'remplacebadge_id_7' => 'remplacebadge_id',
+                    'couleur_id_8' => 'couleur_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'b',
+                    'numero_hexa_1' => 'b',
+                    'status_2' => 'b',
+                    'date_activation_3' => 'b',
+                    'motif_remplacement_4' => 'b',
+                    'date_remplacement_5' => 'b',
+                    'lot_id_6' => 'b',
+                    'remplacebadge_id_7' => 'b',
+                    'couleur_id_8' => 'b',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\Badge',
+                    'numero_hexa_1' => 'App\\Entity\\Badge',
+                    'status_2' => 'App\\Entity\\Badge',
+                    'date_activation_3' => 'App\\Entity\\Badge',
+                    'motif_remplacement_4' => 'App\\Entity\\Badge',
+                    'date_remplacement_5' => 'App\\Entity\\Badge',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); } }];

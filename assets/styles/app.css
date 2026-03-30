@@ -1,0 +1,57 @@
+/* --- BADGES --- */
+.container-badges {
+    margin-bottom: 1.5rem;
+}
+
+.container-badges .badge {
+    white-space: nowrap;
+}
+
+.container-badges code {
+    font-size: 0.75rem;
+    word-break: break-all;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- CARDS --- */
+.card {
+    position: relative;
+}
+
+.card-body {
+    overflow: visible;
+}
+
+/* --- RESPONSIVE FIXES --- */
+@media (max-width: 768px) {
+
+    /* Empêche les collisions */
+    .card,
+    .card-body {
+        height: auto !important;
+        min-height: auto !important;
+    }
+
+    /* Espacement naturel entre sections */
+    .container-badges,
+    .contact-tiers,
+    .lot-info {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Sidebar collapsée */
+    #sidebarLots {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+}
+
+/* --- TITRES --- */
+.section-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,9 @@
+body {
+    background-color: rgb(243, 244, 245);
+}
+
+/* Appliquer une hauteur maximale à vos cartes */
+.card {
+  max-height: 200px; /* Ajustez cette valeur à votre convenance */
+  /* align-self: flex-start;  peut aussi aider si vous utilisez flexbox sur le parent */
+}

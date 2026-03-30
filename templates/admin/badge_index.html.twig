@@ -1,0 +1,17 @@
+{# On hérite du template de base d'EasyAdmin #}
+{% extends '@EasyAdmin/crud/index.html.twig' %}
+
+{# On vient s'insérer dans le bloc "page_actions" (là où il y a les boutons) #}
+{% block page_actions %}
+    
+    {# Notre petit compteur de badges #}
+    <div class="d-flex align-items-center me-3">
+        <span class="badge bg-dark p-2 fs-6">
+            <i class="fas fa-id-badge me-2"></i> {{ paginator.numResults }} badges enregistrés
+        </span>
+    </div>
+
+    {# On affiche les boutons d'origine (Filtres, Créer) juste après #}
+    {{ parent() }}
+    
+{% endblock %}

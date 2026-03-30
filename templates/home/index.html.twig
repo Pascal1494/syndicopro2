@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SyndicCopro | Accueil{% endblock %}
+
+{% block body %}
+{# Un petit style interne pour booster le look #}
+<style>
+    .hero-section {
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 120px 0;
+        border-radius: 0 0 50px 50px;
+    }
+    .card-feature {
+        transition: transform 0.3s;
+        border: none;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .card-feature:hover { transform: translateY(-10px); }
+</style>
+
+<div class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-3 fw-bold">SyndicCopro</h1>
+        <p class="lead mb-4">La plateforme qui connecte Syndics, Gardiens et Copropriétaires.</p>
+        {% if app.user %}
+            <a href="{{ path('admin') }}" class="btn btn-primary btn-lg px-5 shadow">Mon Espace Client</a>
+        {% else %}
+            <a href="{{ path('app_login') }}" class="btn btn-primary btn-lg px-5 shadow">Se connecter</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card card-feature h-100 p-4">
+                <div class="text-primary mb-3"><i class="fas fa-shield-alt fa-3x"></i></div>
+                <h3>Sécurité</h3>
+                <p>Accès sécurisé et filtrage des données par résidence pour une confidentialité totale.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-feature h-100 p-4">
+                <div class="text-success mb-3"><i class="fas fa-tools fa-3x"></i></div>
+                <h3>Interventions</h3>
+                <p>Suivez en temps réel l'avancement des travaux et l'entretien de vos bâtiments.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-feature h-100 p-4">
+                <div class="text-info mb-3"><i class="fas fa-users fa-3x"></i></div>
+                <h3>Communauté</h3>
+                <p>Facilitez les échanges entre le Conseil Syndical et le gestionnaire.</p>
+            </div>
+        </div>
+
+        <div class="container-fluid py-5 text-center">
+            <h1 class="display-5 fw-bold">🏢 Bienvenue sur SyndicCopro</h1>
+            <p class="fs-4">L'outil de gestion qui simplifie la vie de votre résidence.</p>
+            <hr class="my-4">
+            {% if app.user %}
+                <p>Connecté en tant que : <strong>{{ app.user.userIdentifier }}</strong></p>
+                <a href="{{ path('admin') }}" class="btn btn-primary btn-lg">Accéder au Dashboard</a>
+            {% else %}
+                <p>Veuillez vous identifier pour accéder à vos documents.</p>
+                <a href="{{ path('app_login') }}" class="btn btn-outline-light btn-lg">Se connecter</a>
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+{% endblock %}

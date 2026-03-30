@@ -1,0 +1,46 @@
+{# templates/resident/new_incident.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Signaler un incident{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ path('app_resident_home') }}">Mon Espace</a></li>
+            <li class="breadcrumb-item active">Signaler un incident</li>
+        </ol>
+    </nav>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Nouveau Signalement</h4>
+        </div>
+        <div class="card-body">
+            {{ form_start(form) }}
+                <div class="mb-3">
+                    {{ form_label(form.titre, 'Quel est le problème ?') }}
+                    {{ form_widget(form.titre, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                
+                <div class="mb-3">
+                    {{ form_label(form.batiment, 'Dans quel bâtiment ?') }}
+                    {{ form_widget(form.batiment, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_label(form.description, 'Détails de l\'incident') }}
+                    {{ form_widget(form.description, {'attr': {'class': 'form-control', 'rows': '5'}}) }}
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-paper-plane"></i> Envoyer le signalement
+                    </button>
+                    <a href="{{ path('app_resident_home') }}" class="btn btn-light">Annuler</a>
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+{% endblock %}

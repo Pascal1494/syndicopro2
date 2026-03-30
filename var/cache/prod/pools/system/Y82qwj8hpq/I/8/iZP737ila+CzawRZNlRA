@@ -1,0 +1,113 @@
+<?php //f4f1f97692dfed25077d3c65ae9f0a72
+
+return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\CachedValueInterface { public function getValue(): mixed { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            'sqlFinalizer' => [
+                $o[1],
+            ],
+            'resultSetMapping' => [
+                $o[2],
+            ],
+            'parameterMappings' => [
+                [
+                    'userCopro' => [
+                        0,
+                    ],
+                    'dpid' => [
+                        1,
+                    ],
+                ],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer' => [
+            'sql' => [
+                1 => 'SELECT l0_.id AS id_0, l0_.numero_lot AS numero_lot_1, l0_.type AS type_2, l0_.etage AS etage_3, l0_.porte AS porte_4, l0_.tantieme AS tantieme_5, l0_.batiment_id AS batiment_id_6, l0_.parent_lot_id AS parent_lot_id_7, l0_.proprietaire_id AS proprietaire_id_8, l0_.locataire_id AS locataire_id_9 FROM lot l0_ INNER JOIN batiment b1_ ON l0_.batiment_id = b1_.id WHERE b1_.copropriete_id = ? AND l0_.id IN (?)',
+            ],
+        ],
+        'stdClass' => [
+            'aliasMap' => [
+                2 => [
+                    'entity' => 'App\\Entity\\Lot',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'numero_lot_1' => 'numeroLot',
+                    'type_2' => 'type',
+                    'etage_3' => 'etage',
+                    'porte_4' => 'porte',
+                    'tantieme_5' => 'tantieme',
+                ],
+            ],
+            'columnAliasMappings' => [
+                2 => [
+                    'App\\Entity\\Lot' => [
+                        'entity' => [
+                            'id' => 'id_0',
+                            'numeroLot' => 'numero_lot_1',
+                            'type' => 'type_2',
+                            'etage' => 'etage_3',
+                            'porte' => 'porte_4',
+                            'tantieme' => 'tantieme_5',
+                        ],
+                    ],
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'batiment_id_6' => 'integer',
+                    'parent_lot_id_7' => 'integer',
+                    'proprietaire_id_8' => 'integer',
+                    'locataire_id_9' => 'integer',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'entity' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'batiment_id_6' => 'batiment_id',
+                    'parent_lot_id_7' => 'parent_lot_id',
+                    'proprietaire_id_8' => 'proprietaire_id',
+                    'locataire_id_9' => 'locataire_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'entity',
+                    'numero_lot_1' => 'entity',
+                    'type_2' => 'entity',
+                    'etage_3' => 'entity',
+                    'porte_4' => 'entity',
+                    'tantieme_5' => 'entity',
+                    'batiment_id_6' => 'entity',
+                    'parent_lot_id_7' => 'entity',
+                    'proprietaire_id_8' => 'entity',
+                    'locataire_id_9' => 'entity',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\Lot',
+                    'numero_lot_1' => 'App\\Entity\\Lot',
+                    'type_2' => 'App\\Entity\\Lot',
+                    'etage_3' => 'App\\Entity\\Lot',
+                    'porte_4' => 'App\\Entity\\Lot',
+                    'tantieme_5' => 'App\\Entity\\Lot',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); } }];

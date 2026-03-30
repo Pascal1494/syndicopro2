@@ -1,0 +1,256 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('build/resident.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid py-3">
+
+    {# ──────────────────────────────── #}
+    {# EN-TÊTE #}
+    {# ──────────────────────────────── #}
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4 gap-2">
+        <h2 class="h4 fw-bold text-dark mb-0 text-center">
+            <i class="fas fa-desktop me-2 text-primary"></i>Tableau de bord Résident
+        </h2>
+
+        <button class="btn btn-outline-primary btn-sm d-md-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#sidebarLots">
+            <i class="fas fa-bars me-1"></i>Mes Biens ({{ lots|length }})
+        </button>
+    </div>
+
+    <div class="row g-4">
+
+        {# ──────────────────────────────── #}
+        {# SIDEBAR #}
+        {# ──────────────────────────────── #}
+        <div class="col-12 col-md-4 col-lg-3">
+            <div class="collapse d-md-block" id="sidebarLots">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h6 class="mb-0 fw-bold">
+                            <i class="fas fa-list me-2"></i>Mes Biens ({{ lots|length }})
+                        </h6>
+                    </div>
+
+                    <div class="list-group list-group-flush overflow-auto" style="max-height: calc(100vh - 250px);">
+
+                        {% for lot in lots %}
+                        <a href="#tab-{{ lot.id }}"
+                            class="list-group-item list-group-item-action py-3 {{ loop.first ? 'active' : '' }}"
+                            data-bs-toggle="list">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <strong class="text-uppercase small">Lot {{ lot.numeroLot }}</strong><br>
+                                    <small class="text-muted">{{ lot.batiment.nom }}</small>
+                                </div>
+                                <span class="badge bg-light text-dark border rounded-pill small">
+                                    {{ loop.index }}
+                                </span>
+                            </div>
+                        </a>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# ──────────────────────────────── #}
+        {# CONTENU PRINCIPAL #}
+        {# ──────────────────────────────── #}
+        <div class="col-12 col-md-8 col-lg-9">
+
+            <div class="tab-content">
+
+                {% for lot in lots %}
+                <div class="tab-pane fade {{ loop.first ? 'show active' : '' }}" id="tab-{{ lot.id }}">
+
+                    <div class="row g-4">
+
+                        {# ─────────────── FICHE LOT ─────────────── #}
+                        <div class="col-12">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body p-4">
+
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h3 class="h4 fw-bold text-dark">Fiche du Lot {{ lot.numeroLot }}</h3>
+
+                                        {% set is_proprio = (app.user == lot.proprietaire) %}
+                                        <span class="badge bg-light border rounded-pill px-2 py-1 small">
+                                            {{ is_proprio ? 'Propriétaire' : 'Locataire' }}
+                                        </span>
+                                    </div>
+
+                                    <div class="row g-3 mb-4 bg-light rounded p-3 border-bottom">
+                                        <div class="col-auto">
+                                            <small class="text-muted d-block">Bâtiment</small>
+                                            <strong>{{ lot.batiment.nom }}</strong>
+                                        </div>
+                                        <div class="col-auto">
+                                            <small class="text-muted d-block">Étage</small>
+                                            <strong>{{ lot.etage }}</strong>
+                                        </div>
+                                        <div class="col-auto flex-grow-1">
+                                            <small class="text-muted d-block">Position</small>
+                                            <strong>{{ lot.position|default('N/C') }}</strong>
+                                        </div>
+                                    </div>
+
+                                    {# BADGES #}
+                                    <div class="container-badges">
+                                        <h6 class="section-title">Badges d'accès</h6>
+
+                                        <div class="d-flex flex-wrap gap-3">
+                                            {% set badgesActifs = lot.badges|filter(b => b.status|lower == 'actif') %}
+
+                                            {% for badge in badgesActifs %}
+                                            <span
+                                                class="badge bg-light border rounded-pill px-2 py-1 small d-flex align-items-center"
+                                                style="gap: 0.5rem;">
+                                                <i class="fas fa-key text-warning"></i>
+                                                <code>{{ badge.numeroHexa }}</code>
+                                                <span class="badge bg-success small py-1 rounded-pill">
+                                                    {{ badge.status|upper }}
+                                                </span>
+                                            </span>
+                                            {% else %}
+                                            <p class="text-muted small">Aucun badge actif.</p>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        {# ─────────────── CONTACT TIERS ─────────────── #}
+                        <div class="col-12">
+                            <div class="card shadow-sm border-0 contact-tiers">
+                                <div class="card-body p-4">
+
+                                    {% set tiers = (app.user == lot.locataire) ? lot.proprietaire : lot.locataire %}
+
+                                    <h6 class="section-title">
+                                        Contact {{ app.user == lot.locataire ? 'Propriétaire' : 'Locataire' }}
+                                    </h6>
+
+                                    {% if tiers %}
+                                    <p class="mb-2 fw-semibold fs-5">{{ tiers.prenom }} {{ tiers.nom }}</p>
+
+                                    <div class="d-flex flex-column gap-3">
+                                        <a href="tel:{{ tiers.telephone }}" class="text-dark d-flex align-items-center">
+                                            <i class="fas fa-phone-alt me-2"></i>
+                                            {{ tiers.telephone|default('N/C') }}
+                                        </a>
+
+                                        <a href="mailto:{{ tiers.email }}" class="text-dark d-flex align-items-center">
+                                            <i class="fas fa-envelope me-2"></i>
+                                            {{ tiers.email }}
+                                        </a>
+                                    </div>
+
+                                    {% else %}
+                                    <p class="text-muted small">Aucune information disponible.</p>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+
+    {# ──────────────────────────────── #}
+    {# CONTACTS UTILES + SIGNALEMENTS #}
+    {# ──────────────────────────────── #}
+    <div class="row mt-4">
+        <div class="col-12 col-lg-9 mx-auto">
+
+            {# CONTACTS UTILES #}
+            <div class="card shadow-sm border-0 mb-4">
+                <div class="card-header bg-dark text-white py-3">
+                    <h6 class="mb-0 small fw-bold">
+                        <i class="fas fa-info-circle me-2"></i>Contacts Utiles
+                    </h6>
+                </div>
+
+                <div class="card-body p-4 row g-3">
+                    <div class="col-sm-6 col-md-4">
+                        <p class="fw-bold text-primary mb-1">Syndic Gestion</p>
+                        <small><strong>Tel :</strong> 01 23 45 67 89</small><br>
+                        <small><strong>Email :</strong> gestion@votre-syndic.com</small>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4">
+                        <p class="fw-bold text-primary mb-1">Gardiennage</p>
+                        <small><strong>Tel :</strong> 06 98 76 54 32</small><br>
+                        <small><strong>Horaires :</strong> 8h-12h / 14h-18h</small>
+                    </div>
+
+                    <div class="col-md-4">
+                        <p class="fw-bold text-primary mb-1">Président du Conseil</p>
+                        <small>M. Jean Dupont<br>Bâtiment B - 4ème étage</small>
+                    </div>
+                </div>
+            </div>
+
+            {# SIGNALEMENTS #}
+            <div class="card shadow-sm border-0 mb-5">
+                <!-- <div class="card-header bg-white py-3 border-bottom">
+                    <h6 class="fw-bold text-uppercase small">
+                        <i class="fas fa-bullhorn text-warning me-2"></i>Mes derniers signalements
+                    </h6>
+                </div> -->
+                <div class="card-header bg-white d-flex justify-content-between align-items-center py-3"
+                    style="border-bottom: 2px solid #f8d7da;">
+
+                    <h6 class="fw-bold text-uppercase small mb-0">
+                        <i class="fas fa-bullhorn text-warning me-1"></i>
+                        Mes derniers signalements
+                    </h6>
+
+                    <a href="{{ path('app_incident_new') }}" class="btn btn-sm fw-semibold shadow-sm"
+                        style="background-color: #ffc107; color:#212529;">
+                        <i class="fas fa-plus-circle me-1"></i>
+                        SIGNALER
+                    </a>
+
+                </div>
+
+
+                <ul class="list-group list-group-flush">
+                    {% for incident in incidents %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                        <span>
+                            <strong>{{ incident.titre }}</strong> — Déclaré le {{ incident.dateCreation|date('d/m/Y') }}
+                        </span>
+                        <span class="badge bg-info text-dark rounded-pill small">
+                            {{ incident.statut }}
+                        </span>
+                    </li>
+                    {% else %}
+                    <div class="p-5 text-center text-muted">
+                        <i class="fas fa-check-circle fa-3x mb-3 text-success"></i><br>
+                        Tout est en ordre ! Aucun incident signalé.
+                    </div>
+                    {% endfor %}
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

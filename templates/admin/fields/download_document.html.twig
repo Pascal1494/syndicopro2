@@ -1,0 +1,11 @@
+{# templates/admin/fields/download_document.html.twig #}
+{% if field.value %}
+    <a href="{{ asset('uploads/documents/' ~ field.value) }}" 
+       target="_blank" 
+       class="btn btn-sm btn-primary" 
+       title="Ouvrir le document">
+        <i class="fa fa-file-pdf-o me-1"></i> Ouvrir / Télécharger
+    </a>
+{% else %}
+    <span class="badge badge-secondary">Aucun fichier</span>
+{% endif %}

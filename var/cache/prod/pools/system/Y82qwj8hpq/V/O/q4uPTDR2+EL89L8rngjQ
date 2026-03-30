@@ -1,0 +1,86 @@
+<?php //254998d899670e76a1ac0b59743a0713
+
+return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\CachedValueInterface { public function getValue(): mixed { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            'sqlFinalizer' => [
+                $o[1],
+            ],
+            'resultSetMapping' => [
+                $o[2],
+            ],
+            'parameterMappings' => [
+                [
+                    'copro' => [
+                        0,
+                    ],
+                ],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer' => [
+            'sql' => [
+                1 => 'SELECT p0_.id AS id_0, p0_.nom AS nom_1, p0_.domaine AS domaine_2, p0_.email AS email_3, p0_.telephone AS telephone_4 FROM prestataire p0_ INNER JOIN prestataire_copropriete p2_ ON p0_.id = p2_.prestataire_id INNER JOIN copropriete c1_ ON c1_.id = p2_.copropriete_id WHERE c1_.id = ?',
+            ],
+        ],
+        'stdClass' => [
+            'aliasMap' => [
+                2 => [
+                    'p' => 'App\\Entity\\Prestataire',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'nom_1' => 'nom',
+                    'domaine_2' => 'domaine',
+                    'email_3' => 'email',
+                    'telephone_4' => 'telephone',
+                ],
+            ],
+            'columnAliasMappings' => [
+                2 => [
+                    'App\\Entity\\Prestataire' => [
+                        'p' => [
+                            'id' => 'id_0',
+                            'nom' => 'nom_1',
+                            'domaine' => 'domaine_2',
+                            'email' => 'email_3',
+                            'telephone' => 'telephone_4',
+                        ],
+                    ],
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'p' => null,
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'p',
+                    'nom_1' => 'p',
+                    'domaine_2' => 'p',
+                    'email_3' => 'p',
+                    'telephone_4' => 'p',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\Prestataire',
+                    'nom_1' => 'App\\Entity\\Prestataire',
+                    'domaine_2' => 'App\\Entity\\Prestataire',
+                    'email_3' => 'App\\Entity\\Prestataire',
+                    'telephone_4' => 'App\\Entity\\Prestataire',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); } }];

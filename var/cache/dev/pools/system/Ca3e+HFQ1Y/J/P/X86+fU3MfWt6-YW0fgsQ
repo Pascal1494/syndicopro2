@@ -1,0 +1,38 @@
+<?php //easyadmin.crud.entity_fqcn_to_controller_fqcn
+
+return [PHP_INT_MAX, [
+    'App\\Entity\\Badge' => [
+        'App\\Controller\\Admin\\BadgeCrudController',
+    ],
+    'App\\Entity\\Batiment' => [
+        'App\\Controller\\Admin\\BatimentCrudController',
+    ],
+    'App\\Entity\\Copropriete' => [
+        'App\\Controller\\Admin\\CoproprieteCrudController',
+    ],
+    'App\\Entity\\Photo' => [
+        'App\\Controller\\Admin\\DepensePhotoCrudController',
+        'App\\Controller\\Admin\\IncidentPhotoCrudController',
+    ],
+    'App\\Entity\\Document' => [
+        'App\\Controller\\Admin\\DocumentCrudController',
+    ],
+    'App\\Entity\\Incident' => [
+        'App\\Controller\\Admin\\IncidentCrudController',
+    ],
+    'App\\Entity\\Lot' => [
+        'App\\Controller\\Admin\\LotCrudController',
+    ],
+    'App\\Entity\\MenueDepense' => [
+        'App\\Controller\\Admin\\MenueDepenseCrudController',
+    ],
+    'App\\Entity\\Prestataire' => [
+        'App\\Controller\\Admin\\PrestataireCrudController',
+    ],
+    'App\\Entity\\StockBadge' => [
+        'App\\Controller\\Admin\\StockBadgeCrudController',
+    ],
+    'App\\Entity\\User' => [
+        'App\\Controller\\Admin\\UserCrudController',
+    ],
+]];

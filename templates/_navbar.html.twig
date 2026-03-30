@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="{{ path('app_home') }}">
+            <i class="fa fa-city me-2 text-info"></i><strong>SyndicPro</strong>
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav me-auto">
+                {% if app.user %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_resident_home') }}"><i class="fa fa-gauge me-1"></i> Mes biens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_incident_new') }}"><i class="fa fa-triangle-exclamation me-1"></i> Signalements</a>
+                    </li>
+                {% endif %}
+
+                {# Menu spécifique pour le Syndic et le Conseil Syndical #}
+                {% if is_granted('ROLE_SYNDIC') or is_granted('ROLE_CONSEIL') %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-warning" href="#" data-bs-toggle="dropdown">Gestion</a>
+                        <ul class="dropdown-menu">
+                           {# <li><a class="dropdown-item" href="{{ path('app_copropriete_index') }}">Copropriétés</a></li> #}
+                           {# <li><a class="dropdown-item" href="{{ path('app_syndic_details') }}">Infos Syndic</a></li> #}
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{{ path('admin') }}">Console EasyAdmin</a></li>
+                        </ul>
+                    </li>
+                {% endif %}
+            </ul>
+
+            <div class="navbar-nav ms-auto">
+                {% if app.user %}
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            <i class="fa fa-user-circle me-1"></i> {{ app.user.prenom }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="{{ path('app_logout') }}">Déconnexion</a></li>
+                        </ul>
+                    </div>
+                {% else %}
+                    <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>

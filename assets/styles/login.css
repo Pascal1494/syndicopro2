@@ -1,0 +1,30 @@
+/* assets/styles/app.css */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a; /* Ton thème sombre */
+    /* color: white; */
+}
+
+main {
+    flex-shrink: 0;
+    flex-grow: 1; /* Pousse le footer vers le bas */
+}
+
+footer {
+    margin-top: auto;
+}
+
+/* Style spécifique pour la page de connexion */
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}

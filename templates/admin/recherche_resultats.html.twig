@@ -1,0 +1,38 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block page_title %}Résultats pour "{{ q }}"{% endblock %}
+
+{% block content %}
+    <a href="{{ path('admin') }}" class="btn btn-secondary mb-4">⬅ Retour au tableau de bord</a>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    👤 Utilisateurs trouvés ({{ users|length }})
+                </div>
+                <ul class="list-group list-group-flush">
+                    {% for user in users %}
+                        {# ✨ On génère le lien vers l'édition de cet utilisateur précis ! #}
+                        {% set editUrl = ea_url()
+                            .setController('App\\Controller\\Admin\\UserCrudController')
+                            .setAction('edit')
+                            .setEntityId(user.id) 
+                        %}
+                        
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>{{ user.nom }} {{ user.prenom }}</strong><br>
+                                <small class="text-muted">{{ user.telephone }} | {{ user.statutOccupation|default('Staff') }}</small>
+                            </div>
+                            <a href="{{ editUrl }}" class="btn btn-sm btn-outline-primary">Ouvrir</a>
+                        </li>
+                    {% else %}
+                        <li class="list-group-item text-muted">Aucun utilisateur trouvé.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        </div>
+{% endblock %}

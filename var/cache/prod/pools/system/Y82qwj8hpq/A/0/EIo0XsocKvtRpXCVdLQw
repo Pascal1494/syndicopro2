@@ -1,0 +1,93 @@
+<?php //7924efb5d0687d47c2746bf5685d0390
+
+return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\CachedValueInterface { public function getValue(): mixed { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            'sqlFinalizer' => [
+                $o[1],
+            ],
+            'resultSetMapping' => [
+                $o[2],
+            ],
+            'parameterMappings' => [
+                [
+                    'ORMQueryBuilderLoader_getEntitiesByIds_id' => [
+                        0,
+                    ],
+                ],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer' => [
+            'sql' => [
+                1 => 'SELECT b0_.id AS id_0, b0_.nom AS nom_1, b0_.nombre_etage AS nombre_etage_2, b0_.as_ascenceur AS as_ascenceur_3, b0_.copropriete_id AS copropriete_id_4 FROM batiment b0_ WHERE b0_.id IN (?)',
+            ],
+        ],
+        'stdClass' => [
+            'aliasMap' => [
+                2 => [
+                    'e' => 'App\\Entity\\Batiment',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'nom_1' => 'nom',
+                    'nombre_etage_2' => 'nombreEtage',
+                    'as_ascenceur_3' => 'asAscenceur',
+                ],
+            ],
+            'columnAliasMappings' => [
+                2 => [
+                    'App\\Entity\\Batiment' => [
+                        'e' => [
+                            'id' => 'id_0',
+                            'nom' => 'nom_1',
+                            'nombreEtage' => 'nombre_etage_2',
+                            'asAscenceur' => 'as_ascenceur_3',
+                        ],
+                    ],
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'copropriete_id_4' => 'integer',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'e' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'copropriete_id_4' => 'copropriete_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'e',
+                    'nom_1' => 'e',
+                    'nombre_etage_2' => 'e',
+                    'as_ascenceur_3' => 'e',
+                    'copropriete_id_4' => 'e',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\Batiment',
+                    'nom_1' => 'App\\Entity\\Batiment',
+                    'nombre_etage_2' => 'App\\Entity\\Batiment',
+                    'as_ascenceur_3' => 'App\\Entity\\Batiment',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); } }];

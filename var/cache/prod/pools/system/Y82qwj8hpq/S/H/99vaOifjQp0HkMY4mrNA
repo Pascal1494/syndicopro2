@@ -1,0 +1,120 @@
+<?php //8bd026db1d50618a1760a80ee5e1bd3a
+
+return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\CachedValueInterface { public function getValue(): mixed { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            'sqlFinalizer' => [
+                $o[1],
+            ],
+            'resultSetMapping' => [
+                $o[2],
+            ],
+            'parameterMappings' => [
+                [
+                    'dpid' => [
+                        0,
+                    ],
+                ],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer' => [
+            'sql' => [
+                1 => 'SELECT m0_.id AS id_0, m0_.designation AS designation_1, m0_.fournisseur AS fournisseur_2, m0_.date_achat AS date_achat_3, m0_.description_usage AS description_usage_4, m0_.prix_unitaire_ht AS prix_unitaire_ht_5, m0_.prix_unitaire_ttc AS prix_unitaire_ttc_6, m0_.quantite AS quantite_7, m0_.total_ttc AS total_ttc_8, m0_.statut AS statut_9, m0_.acheteur_id AS acheteur_id_10, m0_.copropriete_id AS copropriete_id_11 FROM menue_depense m0_ WHERE m0_.id IN (?)',
+            ],
+        ],
+        'stdClass' => [
+            'aliasMap' => [
+                2 => [
+                    'entity' => 'App\\Entity\\MenueDepense',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'designation_1' => 'designation',
+                    'fournisseur_2' => 'fournisseur',
+                    'date_achat_3' => 'dateAchat',
+                    'description_usage_4' => 'descriptionUsage',
+                    'prix_unitaire_ht_5' => 'prixUnitaireHt',
+                    'prix_unitaire_ttc_6' => 'prixUnitaireTtc',
+                    'quantite_7' => 'quantite',
+                    'total_ttc_8' => 'totalTtc',
+                    'statut_9' => 'statut',
+                ],
+            ],
+            'columnAliasMappings' => [
+                2 => [
+                    'App\\Entity\\MenueDepense' => [
+                        'entity' => [
+                            'id' => 'id_0',
+                            'designation' => 'designation_1',
+                            'fournisseur' => 'fournisseur_2',
+                            'dateAchat' => 'date_achat_3',
+                            'descriptionUsage' => 'description_usage_4',
+                            'prixUnitaireHt' => 'prix_unitaire_ht_5',
+                            'prixUnitaireTtc' => 'prix_unitaire_ttc_6',
+                            'quantite' => 'quantite_7',
+                            'totalTtc' => 'total_ttc_8',
+                            'statut' => 'statut_9',
+                        ],
+                    ],
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'acheteur_id_10' => 'integer',
+                    'copropriete_id_11' => 'integer',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'entity' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'acheteur_id_10' => 'acheteur_id',
+                    'copropriete_id_11' => 'copropriete_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'entity',
+                    'designation_1' => 'entity',
+                    'fournisseur_2' => 'entity',
+                    'date_achat_3' => 'entity',
+                    'description_usage_4' => 'entity',
+                    'prix_unitaire_ht_5' => 'entity',
+                    'prix_unitaire_ttc_6' => 'entity',
+                    'quantite_7' => 'entity',
+                    'total_ttc_8' => 'entity',
+                    'statut_9' => 'entity',
+                    'acheteur_id_10' => 'entity',
+                    'copropriete_id_11' => 'entity',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\MenueDepense',
+                    'designation_1' => 'App\\Entity\\MenueDepense',
+                    'fournisseur_2' => 'App\\Entity\\MenueDepense',
+                    'date_achat_3' => 'App\\Entity\\MenueDepense',
+                    'description_usage_4' => 'App\\Entity\\MenueDepense',
+                    'prix_unitaire_ht_5' => 'App\\Entity\\MenueDepense',
+                    'prix_unitaire_ttc_6' => 'App\\Entity\\MenueDepense',
+                    'quantite_7' => 'App\\Entity\\MenueDepense',
+                    'total_ttc_8' => 'App\\Entity\\MenueDepense',
+                    'statut_9' => 'App\\Entity\\MenueDepense',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); } }];

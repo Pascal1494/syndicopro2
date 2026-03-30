@@ -1,0 +1,115 @@
+<?php //c7a37a6c22c6d4f5c101402a45ceb6a9
+
+return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\CachedValueInterface { public function getValue(): mixed { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            'sqlFinalizer' => [
+                $o[1],
+            ],
+            'resultSetMapping' => [
+                $o[2],
+            ],
+            'parameterMappings' => [
+                [
+                    'copro' => [
+                        0,
+                    ],
+                    'dpid' => [
+                        1,
+                    ],
+                ],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer' => [
+            'sql' => [
+                1 => 'SELECT i0_.id AS id_0, i0_.titre AS titre_1, i0_.description AS description_2, i0_.statut AS statut_3, i0_.date_creation AS date_creation_4, i0_.date_intervention AS date_intervention_5, i0_.date_resolution AS date_resolution_6, i0_.commentaire_reparateur AS commentaire_reparateur_7, i0_.declarant_id AS declarant_id_8, i0_.batiment_id AS batiment_id_9 FROM incident i0_ INNER JOIN batiment b1_ ON i0_.batiment_id = b1_.id WHERE b1_.copropriete_id = ? AND i0_.id IN (?)',
+            ],
+        ],
+        'stdClass' => [
+            'aliasMap' => [
+                2 => [
+                    'entity' => 'App\\Entity\\Incident',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'titre_1' => 'titre',
+                    'description_2' => 'description',
+                    'statut_3' => 'statut',
+                    'date_creation_4' => 'dateCreation',
+                    'date_intervention_5' => 'dateIntervention',
+                    'date_resolution_6' => 'dateResolution',
+                    'commentaire_reparateur_7' => 'commentaireReparateur',
+                ],
+            ],
+            'columnAliasMappings' => [
+                2 => [
+                    'App\\Entity\\Incident' => [
+                        'entity' => [
+                            'id' => 'id_0',
+                            'titre' => 'titre_1',
+                            'description' => 'description_2',
+                            'statut' => 'statut_3',
+                            'dateCreation' => 'date_creation_4',
+                            'dateIntervention' => 'date_intervention_5',
+                            'dateResolution' => 'date_resolution_6',
+                            'commentaireReparateur' => 'commentaire_reparateur_7',
+                        ],
+                    ],
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'declarant_id_8' => 'integer',
+                    'batiment_id_9' => 'integer',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'entity' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'declarant_id_8' => 'declarant_id',
+                    'batiment_id_9' => 'batiment_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'entity',
+                    'titre_1' => 'entity',
+                    'description_2' => 'entity',
+                    'statut_3' => 'entity',
+                    'date_creation_4' => 'entity',
+                    'date_intervention_5' => 'entity',
+                    'date_resolution_6' => 'entity',
+                    'commentaire_reparateur_7' => 'entity',
+                    'declarant_id_8' => 'entity',
+                    'batiment_id_9' => 'entity',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\Incident',
+                    'titre_1' => 'App\\Entity\\Incident',
+                    'description_2' => 'App\\Entity\\Incident',
+                    'statut_3' => 'App\\Entity\\Incident',
+                    'date_creation_4' => 'App\\Entity\\Incident',
+                    'date_intervention_5' => 'App\\Entity\\Incident',
+                    'date_resolution_6' => 'App\\Entity\\Incident',
+                    'commentaire_reparateur_7' => 'App\\Entity\\Incident',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); } }];

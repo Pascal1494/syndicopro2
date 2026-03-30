@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription - Résident{% endblock %}
+
+{% block body %}
+<div class="container mt-5 mb-5" style="max-width: 600px;">
+    <h1 class="mb-4">Créer mon espace résident</h1>
+
+    {# S'il y a des erreurs de validation, elles s'afficheront ici #}
+    {{ form_errors(registrationForm) }}
+
+    {# Début du formulaire #}
+    {{ form_start(registrationForm) }}
+        
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                {{ form_row(registrationForm.nom) }}
+            </div>
+            <div class="col-md-6 mb-3">
+                {{ form_row(registrationForm.prenom) }}
+            </div>
+        </div>
+
+        <div class="mb-3">
+            {{ form_row(registrationForm.email) }}
+        </div>
+
+        <div class="mb-4 p-3 border rounded bg-light">
+            {{ form_row(registrationForm.copropriete) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form_row(registrationForm.plainPassword) }}
+        </div>
+
+        <div class="mb-4">
+            {{ form_row(registrationForm.agreeTerms) }}
+        </div>
+
+        {# ✨ LE FAMEUX BOUTON EST ICI ! #}
+        <button type="submit" class="btn btn-primary btn-lg w-100">M'inscrire et accéder à mon espace</button>
+        
+    {{ form_end(registrationForm) }}
+</div>
+{% endblock %}

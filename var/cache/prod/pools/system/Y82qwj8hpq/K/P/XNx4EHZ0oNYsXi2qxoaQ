@@ -1,0 +1,92 @@
+<?php //0f962326c8ced979b18f7b8b30e7001c
+
+return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\CachedValueInterface { public function getValue(): mixed { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            'sqlFinalizer' => [
+                $o[1],
+            ],
+            'resultSetMapping' => [
+                $o[2],
+            ],
+            'parameterMappings' => [
+                [
+                    'copro' => [
+                        0,
+                    ],
+                ],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\SingleSelectSqlFinalizer' => [
+            'sql' => [
+                1 => 'SELECT s0_.id AS id_0, s0_.quantite AS quantite_1, s0_.seuil_alerte AS seuil_alerte_2, s0_.copropriete_id AS copropriete_id_3, s0_.couleur_id AS couleur_id_4 FROM stock_badge s0_ WHERE s0_.quantite <= s0_.seuil_alerte AND s0_.copropriete_id = ?',
+            ],
+        ],
+        'stdClass' => [
+            'aliasMap' => [
+                2 => [
+                    's' => 'App\\Entity\\StockBadge',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'quantite_1' => 'quantite',
+                    'seuil_alerte_2' => 'seuilAlerte',
+                ],
+            ],
+            'columnAliasMappings' => [
+                2 => [
+                    'App\\Entity\\StockBadge' => [
+                        's' => [
+                            'id' => 'id_0',
+                            'quantite' => 'quantite_1',
+                            'seuilAlerte' => 'seuil_alerte_2',
+                        ],
+                    ],
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'copropriete_id_3' => 'integer',
+                    'couleur_id_4' => 'integer',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    's' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'copropriete_id_3' => 'copropriete_id',
+                    'couleur_id_4' => 'couleur_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 's',
+                    'quantite_1' => 's',
+                    'seuil_alerte_2' => 's',
+                    'copropriete_id_3' => 's',
+                    'couleur_id_4' => 's',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\StockBadge',
+                    'quantite_1' => 'App\\Entity\\StockBadge',
+                    'seuil_alerte_2' => 'App\\Entity\\StockBadge',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); } }];
