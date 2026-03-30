@@ -25,6 +25,16 @@ return [PHP_INT_MAX, [
             'delete' => 'admin_batiment_delete',
             'detail' => 'admin_batiment_detail',
         ],
+        'App\\Controller\\Admin\\CaisseConseilCrudController' => [
+            'index' => 'admin_caisse_conseil_index',
+            'new' => 'admin_caisse_conseil_new',
+            'batchDelete' => 'admin_caisse_conseil_batch_delete',
+            'autocomplete' => 'admin_caisse_conseil_autocomplete',
+            'renderFilters' => 'admin_caisse_conseil_render_filters',
+            'edit' => 'admin_caisse_conseil_edit',
+            'delete' => 'admin_caisse_conseil_delete',
+            'detail' => 'admin_caisse_conseil_detail',
+        ],
         'App\\Controller\\Admin\\CoproprieteCrudController' => [
             'index' => 'admin_copropriete_index',
             'new' => 'admin_copropriete_new',
@@ -149,6 +159,16 @@ return [PHP_INT_MAX, [
             'edit' => 'demo_admin_batiment_edit',
             'delete' => 'demo_admin_batiment_delete',
             'detail' => 'demo_admin_batiment_detail',
+        ],
+        'App\\Controller\\Admin\\CaisseConseilCrudController' => [
+            'index' => 'demo_admin_caisse_conseil_index',
+            'new' => 'demo_admin_caisse_conseil_new',
+            'batchDelete' => 'demo_admin_caisse_conseil_batch_delete',
+            'autocomplete' => 'demo_admin_caisse_conseil_autocomplete',
+            'renderFilters' => 'demo_admin_caisse_conseil_render_filters',
+            'edit' => 'demo_admin_caisse_conseil_edit',
+            'delete' => 'demo_admin_caisse_conseil_delete',
+            'detail' => 'demo_admin_caisse_conseil_detail',
         ],
         'App\\Controller\\Admin\\CoproprieteCrudController' => [
             'index' => 'demo_admin_copropriete_index',

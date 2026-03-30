@@ -9,8 +9,8 @@
     <parameter key="kernel.runtime_mode.cli">%env(not:default:kernel.runtime_mode.web:)%</parameter>
     <parameter key="kernel.runtime_mode.worker">%env(bool:default::key:worker:default:kernel.runtime_mode:)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:/laragon/www/syndicopro2/var/cache/dev</parameter>
-    <parameter key="kernel.cache_dir">C:/laragon/www/syndicopro2/var/cache/dev</parameter>
+    <parameter key="kernel.build_dir">C:\laragon\www\syndicopro2\var\cache\dev</parameter>
+    <parameter key="kernel.cache_dir">C:\laragon\www\syndicopro2\var\cache\dev</parameter>
     <parameter key="kernel.logs_dir">C:\laragon\www\syndicopro2\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -205,15 +205,15 @@
     <parameter key="translator.logging">false</parameter>
     <parameter key="translator.default_path">C:\laragon\www\syndicopro2/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:/laragon/www/syndicopro2/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:\laragon\www\syndicopro2\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"/>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
-    <parameter key="router.cache_dir">C:/laragon/www/syndicopro2/var/cache/dev</parameter>
+    <parameter key="router.cache_dir">C:\laragon\www\syndicopro2\var\cache\dev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">C:/laragon/www/syndicopro2/var/cache/dev/serialization.php</parameter>
+    <parameter key="serializer.mapping.cache.file">C:\laragon\www\syndicopro2\var\cache\dev/serialization.php</parameter>
     <parameter key=".serializer.named_serializers" type="collection"/>
     <parameter key="cache.prefix.seed">_C:\laragon\www\syndicopro2.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
@@ -235,11 +235,11 @@
       <parameter key="data-controller">csrf-protection</parameter>
     </parameter>
     <parameter key=".form.type_extension.csrf.token_id">submit</parameter>
-    <parameter key="validator.mapping.cache.file">C:/laragon/www/syndicopro2/var/cache/dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:\laragon\www\syndicopro2\var\cache\dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_main_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:/laragon/www/syndicopro2/var/cache/dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:\laragon\www\syndicopro2\var\cache\dev/profiler</parameter>
     <parameter key="doctrine.dbal.configuration.class">Doctrine\DBAL\Configuration</parameter>
     <parameter key="doctrine.data_collector.class">Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector</parameter>
     <parameter key="doctrine.dbal.connection.event_manager.class">Symfony\Bridge\Doctrine\ContainerAwareEventManager</parameter>
@@ -322,7 +322,7 @@
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.enable_lazy_ghost_objects">true</parameter>
     <parameter key="doctrine.orm.enable_native_lazy_objects">false</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:/laragon/www/syndicopro2/var/cache/dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:\laragon\www\syndicopro2\var\cache\dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -517,6 +517,14 @@
         <argument type="service" id=".service_locator.WOU_dzL.App\Controller\Admin\BatimentCrudController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\CaisseConseilCrudController" class="App\Controller\Admin\CaisseConseilCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="ea.crud_controller"/>
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.WOU_dzL.App\Controller\Admin\CaisseConseilCrudController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\CoproprieteCrudController" class="App\Controller\Admin\CoproprieteCrudController" public="true" autowire="true" autoconfigure="true">
       <tag name="ea.crud_controller"/>
       <tag name="controller.service_arguments"/>
@@ -539,6 +547,8 @@
       <argument type="service" id="App\Repository\IncidentRepository"/>
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
       <argument type="service" id="assets.packages"/>
+      <argument type="service" id="App\Repository\CaisseConseilRepository"/>
+      <argument type="service" id="App\Service\CaisseConseilService"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.prgUcSS.App\Controller\Admin\DashboardController"/>
       </call>
@@ -720,6 +730,10 @@
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
+    <service id="App\Entity\CaisseConseil" class="App\Entity\CaisseConseil" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
     <service id="App\Entity\CategorieDepense" class="App\Entity\CategorieDepense" autowire="true" autoconfigure="true">
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
@@ -772,6 +786,9 @@
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
     </service>
+    <service id="App\Form\CaisseInitialType" class="App\Form\CaisseInitialType" autowire="true" autoconfigure="true">
+      <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
+    </service>
     <service id="App\Form\IncidentType" class="App\Form\IncidentType" autowire="true" autoconfigure="true">
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
     </service>
@@ -787,6 +804,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\BatimentRepository" class="App\Repository\BatimentRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\CaisseConseilRepository" class="App\Repository\CaisseConseilRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -847,6 +868,9 @@
       <argument type="service" id="mailer.mailer"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
     </service>
+    <service id="App\Service\CaisseConseilService" class="App\Service\CaisseConseilService" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\Repository\CaisseConseilRepository"/>
+    </service>
     <service id="App\Service\DemoMode" class="App\Service\DemoMode" autowire="true" autoconfigure="true"/>
     <service id="App\Service\DemoProtection" class="App\Service\DemoProtection" autowire="true" autoconfigure="true"/>
     <service id="App\Validator\StockSuffisant" class="App\Validator\StockSuffisant" autowire="true" autoconfigure="true">
@@ -888,7 +912,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" priority="-50">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.zYtb7xg"/>
+      <argument type="service" id=".service_locator.myrP3wv"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" priority="-100">controller.argument_value_resolver</tag>
@@ -992,7 +1016,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -1921,6 +1945,7 @@
         <argument>EasyCorp\Bundle\EasyAdminBundle\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\CaisseInitialType</argument>
         <argument>App\Form\IncidentType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
@@ -2121,7 +2146,7 @@
       <argument/>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/pools/system</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -2317,7 +2342,7 @@
     <service id="asset_mapper.cached_mapped_asset_factory" class="Symfony\Component\AssetMapper\Factory\CachedMappedAssetFactory">
       <tag name="container.decorator" id="asset_mapper.mapped_asset_factory" inner="asset_mapper.cached_mapped_asset_factory.inner"/>
       <argument type="service" id="asset_mapper.cached_mapped_asset_factory.inner"/>
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/asset_mapper</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/asset_mapper</argument>
       <argument>true</argument>
     </service>
     <service id="asset_mapper.repository" class="Symfony\Component\AssetMapper\AssetMapperRepository">
@@ -2715,7 +2740,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:/laragon/www/syndicopro2/var/cache/dev/translations</argument>
+        <argument key="cache_dir">C:\laragon\www\syndicopro2\var\cache\dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
@@ -4175,7 +4200,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.zYtb7xg"/>
+      <argument type="service" id=".service_locator.myrP3wv"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -4297,7 +4322,7 @@
       <argument type="service" id=".service_locator.xdLQ5FJ.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:/laragon/www/syndicopro2/var/cache/dev</argument>
+        <argument key="cache_dir">C:\laragon\www\syndicopro2\var\cache\dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -4498,10 +4523,10 @@
       <argument type="collection">
         <argument type="service" id="serializer.mapping.attribute_loader"/>
       </argument>
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/serialization.php</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/serialization.php</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -4744,7 +4769,7 @@
       <argument>false</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/sessions</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -4824,7 +4849,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.Dys8r8y"/>
+      <argument type="service" id=".service_locator.9QN1qBT"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4937,6 +4962,7 @@
       <argument type="service" id="form.server_params"/>
       <argument>%form.type_extension.csrf.field_attr%</argument>
       <argument type="collection">
+        <argument key="App\Form\CaisseInitialType">submit</argument>
         <argument key="App\Form\IncidentType">submit</argument>
         <argument key="App\Form\RegistrationFormType">submit</argument>
       </argument>
@@ -4981,10 +5007,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/validation.php</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/validation.php</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory">
@@ -5717,7 +5743,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage">
-      <argument>file:C:/laragon/www/syndicopro2/var/cache/dev/profiler</argument>
+      <argument>file:C:\laragon\www\syndicopro2\var\cache\dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.reset" method="?reset"/>
@@ -5798,7 +5824,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/App_KernelDevDebugContainer</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/App_KernelDevDebugContainer</argument>
       <argument type="service" id=".virtual_request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector">
@@ -6220,7 +6246,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.tP3TLnt"/>
+      <argument type="service" id=".service_locator.bwS7c9H"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -6418,7 +6444,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:/laragon/www/syndicopro2/var/cache/dev/doctrine/orm/Proxies</argument>
+        <argument>C:\laragon\www\syndicopro2\var\cache\dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -6849,7 +6875,7 @@
       <tag name="kernel.reset" method="resetGlobals"/>
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
-        <argument key="cache">C:/laragon/www/syndicopro2/var/cache/dev/twig</argument>
+        <argument key="cache">C:\laragon\www\syndicopro2\var\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -9199,6 +9225,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\BatimentCrudController" class="App\Controller\Admin\BatimentCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\BatimentCrudController" class="App\Controller\Admin\BatimentCrudController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\BatimentCrudController" class="App\Controller\Admin\BatimentCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\CaisseConseilCrudController" class="App\Controller\Admin\CaisseConseilCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\CaisseConseilCrudController" class="App\Controller\Admin\CaisseConseilCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\CaisseConseilCrudController" class="App\Controller\Admin\CaisseConseilCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\CaisseConseilCrudController" class="App\Controller\Admin\CaisseConseilCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\CoproprieteCrudController" class="App\Controller\Admin\CoproprieteCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\CoproprieteCrudController" class="App\Controller\Admin\CoproprieteCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\CoproprieteCrudController" class="App\Controller\Admin\CoproprieteCrudController" autowire="true" abstract="true"/>
@@ -9298,6 +9328,8 @@
     <service id=".abstract.instanceof.App\Entity\Badge" class="App\Entity\Badge" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Batiment.0.App\Entity\Batiment" class="App\Entity\Batiment" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Batiment" class="App\Entity\Batiment" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\CaisseConseil.0.App\Entity\CaisseConseil" class="App\Entity\CaisseConseil" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\CaisseConseil" class="App\Entity\CaisseConseil" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\CategorieDepense.0.App\Entity\CategorieDepense" class="App\Entity\CategorieDepense" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\CategorieDepense" class="App\Entity\CategorieDepense" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Copropriete.0.App\Entity\Copropriete" class="App\Entity\Copropriete" autowire="true" abstract="true"/>
@@ -9324,6 +9356,8 @@
     <service id=".abstract.instanceof.App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\EventDispatcher\EventSubscriberInterface.0.App\EventSubscriber\EasyAdminCsrfSubscriber" class="App\EventSubscriber\EasyAdminCsrfSubscriber" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\EventSubscriber\EasyAdminCsrfSubscriber" class="App\EventSubscriber\EasyAdminCsrfSubscriber" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CaisseInitialType" class="App\Form\CaisseInitialType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CaisseInitialType" class="App\Form\CaisseInitialType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\IncidentType" class="App\Form\IncidentType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\IncidentType" class="App\Form\IncidentType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
@@ -9334,6 +9368,8 @@
     <service id=".abstract.instanceof.App\Repository\BadgeRepository" class="App\Repository\BadgeRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BatimentRepository" class="App\Repository\BatimentRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\BatimentRepository" class="App\Repository\BatimentRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CaisseConseilRepository" class="App\Repository\CaisseConseilRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CaisseConseilRepository" class="App\Repository\CaisseConseilRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategorieDepenseRepository" class="App\Repository\CategorieDepenseRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CategorieDepenseRepository" class="App\Repository\CategorieDepenseRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CoproprieteRepository" class="App\Repository\CoproprieteRepository" autowire="true" abstract="true"/>
@@ -10333,6 +10369,132 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.8yyrqQl" method="withContext"/>
     </service>
+    <service id=".service_locator.eVx11yR.App\Controller\Admin\CaisseConseilCrudController::configureCrud()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::configureCrud()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::configureCrud()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.eVx11yR" method="withContext"/>
+    </service>
+    <service id=".service_locator.4g8KBWG.App\Controller\Admin\CaisseConseilCrudController::configureAssets()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::configureAssets()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::configureAssets()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.4g8KBWG" method="withContext"/>
+    </service>
+    <service id=".service_locator.MygkM6_.App\Controller\Admin\CaisseConseilCrudController::configureActions()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::configureActions()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::configureActions()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.MygkM6_" method="withContext"/>
+    </service>
+    <service id=".service_locator.vx1u6Ma.App\Controller\Admin\CaisseConseilCrudController::configureFilters()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::configureFilters()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::configureFilters()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vx1u6Ma" method="withContext"/>
+    </service>
+    <service id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::index()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator._ewVeMD" method="withContext"/>
+    </service>
+    <service id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::detail()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::detail()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::detail()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator._ewVeMD" method="withContext"/>
+    </service>
+    <service id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::edit()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator._ewVeMD" method="withContext"/>
+    </service>
+    <service id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::new()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator._ewVeMD" method="withContext"/>
+    </service>
+    <service id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::delete()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator._ewVeMD" method="withContext"/>
+    </service>
+    <service id=".service_locator.Zxs0ZZ9.App\Controller\Admin\CaisseConseilCrudController::batchDelete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::batchDelete()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::batchDelete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.Zxs0ZZ9" method="withContext"/>
+    </service>
+    <service id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::autocomplete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::autocomplete()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::autocomplete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator._ewVeMD" method="withContext"/>
+    </service>
+    <service id=".service_locator._Gfu5xe.App\Controller\Admin\CaisseConseilCrudController::createIndexQueryBuilder()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::createIndexQueryBuilder()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::createIndexQueryBuilder()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator._Gfu5xe" method="withContext"/>
+    </service>
+    <service id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::renderFilters()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::renderFilters()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::renderFilters()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator._ewVeMD" method="withContext"/>
+    </service>
+    <service id=".service_locator.3BoFVFw.App\Controller\Admin\CaisseConseilCrudController::updateEntity()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::updateEntity()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::updateEntity()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.3BoFVFw" method="withContext"/>
+    </service>
+    <service id=".service_locator.3BoFVFw.App\Controller\Admin\CaisseConseilCrudController::persistEntity()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::persistEntity()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::persistEntity()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.3BoFVFw" method="withContext"/>
+    </service>
+    <service id=".service_locator.3BoFVFw.App\Controller\Admin\CaisseConseilCrudController::deleteEntity()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::deleteEntity()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::deleteEntity()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.3BoFVFw" method="withContext"/>
+    </service>
+    <service id=".service_locator.5pLxdxQ.App\Controller\Admin\CaisseConseilCrudController::createEditForm()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::createEditForm()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::createEditForm()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5pLxdxQ" method="withContext"/>
+    </service>
+    <service id=".service_locator.5pLxdxQ.App\Controller\Admin\CaisseConseilCrudController::createEditFormBuilder()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::createEditFormBuilder()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::createEditFormBuilder()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5pLxdxQ" method="withContext"/>
+    </service>
+    <service id=".service_locator.5pLxdxQ.App\Controller\Admin\CaisseConseilCrudController::createNewForm()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::createNewForm()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::createNewForm()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5pLxdxQ" method="withContext"/>
+    </service>
+    <service id=".service_locator.5pLxdxQ.App\Controller\Admin\CaisseConseilCrudController::createNewFormBuilder()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::createNewFormBuilder()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::createNewFormBuilder()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5pLxdxQ" method="withContext"/>
+    </service>
+    <service id=".service_locator.8yyrqQl.App\Controller\Admin\CaisseConseilCrudController::configureResponseParameters()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController::configureResponseParameters()"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController::configureResponseParameters()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.8yyrqQl" method="withContext"/>
+    </service>
     <service id=".service_locator.MygkM6_.App\Controller\Admin\CoproprieteCrudController::configureActions()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\CoproprieteCrudController::configureActions()"/>
       <argument>App\Controller\Admin\CoproprieteCrudController::configureActions()</argument>
@@ -11155,6 +11317,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.z0A7H.F" method="withContext"/>
     </service>
+    <service id=".service_locator.z0A7H.F.App\Controller\Admin\MenueDepenseCrudController::createCaisse()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\MenueDepenseCrudController::createCaisse()"/>
+      <argument>App\Controller\Admin\MenueDepenseCrudController::createCaisse()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.z0A7H.F" method="withContext"/>
+    </service>
     <service id=".service_locator.4g8KBWG.App\Controller\Admin\MenueDepenseCrudController::configureAssets()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\MenueDepenseCrudController::configureAssets()"/>
       <argument>App\Controller\Admin\MenueDepenseCrudController::configureAssets()</argument>
@@ -11723,7 +11891,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.0MQaTBY" method="withContext"/>
     </service>
-    <service id=".service_locator.zYtb7xg" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.myrP3wv" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
@@ -11772,6 +11940,27 @@
         <argument key="App\Controller\Admin\BatimentCrudController::createNewForm" type="service_closure" id=".service_locator.5pLxdxQ.App\Controller\Admin\BatimentCrudController::createNewForm()"/>
         <argument key="App\Controller\Admin\BatimentCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.5pLxdxQ.App\Controller\Admin\BatimentCrudController::createNewFormBuilder()"/>
         <argument key="App\Controller\Admin\BatimentCrudController::configureResponseParameters" type="service_closure" id=".service_locator.8yyrqQl.App\Controller\Admin\BatimentCrudController::configureResponseParameters()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::configureCrud" type="service_closure" id=".service_locator.eVx11yR.App\Controller\Admin\CaisseConseilCrudController::configureCrud()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::configureAssets" type="service_closure" id=".service_locator.4g8KBWG.App\Controller\Admin\CaisseConseilCrudController::configureAssets()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::configureActions" type="service_closure" id=".service_locator.MygkM6_.App\Controller\Admin\CaisseConseilCrudController::configureActions()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::configureFilters" type="service_closure" id=".service_locator.vx1u6Ma.App\Controller\Admin\CaisseConseilCrudController::configureFilters()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::index" type="service_closure" id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::index()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::detail" type="service_closure" id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::detail()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::edit" type="service_closure" id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::edit()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::new" type="service_closure" id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::new()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::delete" type="service_closure" id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::delete()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::batchDelete" type="service_closure" id=".service_locator.Zxs0ZZ9.App\Controller\Admin\CaisseConseilCrudController::batchDelete()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::autocomplete" type="service_closure" id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::autocomplete()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator._Gfu5xe.App\Controller\Admin\CaisseConseilCrudController::createIndexQueryBuilder()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::renderFilters" type="service_closure" id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::renderFilters()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::updateEntity" type="service_closure" id=".service_locator.3BoFVFw.App\Controller\Admin\CaisseConseilCrudController::updateEntity()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::persistEntity" type="service_closure" id=".service_locator.3BoFVFw.App\Controller\Admin\CaisseConseilCrudController::persistEntity()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::deleteEntity" type="service_closure" id=".service_locator.3BoFVFw.App\Controller\Admin\CaisseConseilCrudController::deleteEntity()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::createEditForm" type="service_closure" id=".service_locator.5pLxdxQ.App\Controller\Admin\CaisseConseilCrudController::createEditForm()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.5pLxdxQ.App\Controller\Admin\CaisseConseilCrudController::createEditFormBuilder()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::createNewForm" type="service_closure" id=".service_locator.5pLxdxQ.App\Controller\Admin\CaisseConseilCrudController::createNewForm()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.5pLxdxQ.App\Controller\Admin\CaisseConseilCrudController::createNewFormBuilder()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController::configureResponseParameters" type="service_closure" id=".service_locator.8yyrqQl.App\Controller\Admin\CaisseConseilCrudController::configureResponseParameters()"/>
         <argument key="App\Controller\Admin\CoproprieteCrudController::configureActions" type="service_closure" id=".service_locator.MygkM6_.App\Controller\Admin\CoproprieteCrudController::configureActions()"/>
         <argument key="App\Controller\Admin\CoproprieteCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator._Gfu5xe.App\Controller\Admin\CoproprieteCrudController::createIndexQueryBuilder()"/>
         <argument key="App\Controller\Admin\CoproprieteCrudController::configureCrud" type="service_closure" id=".service_locator.eVx11yR.App\Controller\Admin\CoproprieteCrudController::configureCrud()"/>
@@ -11906,6 +12095,7 @@
         <argument key="App\Controller\Admin\MenueDepenseCrudController::updateEntity" type="service_closure" id=".service_locator.3BoFVFw.App\Controller\Admin\MenueDepenseCrudController::updateEntity()"/>
         <argument key="App\Controller\Admin\MenueDepenseCrudController::formatTextData" type="service_closure" id=".service_locator.8ywxHPS.App\Controller\Admin\MenueDepenseCrudController::formatTextData()"/>
         <argument key="App\Controller\Admin\MenueDepenseCrudController::export" type="service_closure" id=".service_locator.z0A7H.F.App\Controller\Admin\MenueDepenseCrudController::export()"/>
+        <argument key="App\Controller\Admin\MenueDepenseCrudController::createCaisse" type="service_closure" id=".service_locator.z0A7H.F.App\Controller\Admin\MenueDepenseCrudController::createCaisse()"/>
         <argument key="App\Controller\Admin\MenueDepenseCrudController::configureAssets" type="service_closure" id=".service_locator.4g8KBWG.App\Controller\Admin\MenueDepenseCrudController::configureAssets()"/>
         <argument key="App\Controller\Admin\MenueDepenseCrudController::configureFilters" type="service_closure" id=".service_locator.vx1u6Ma.App\Controller\Admin\MenueDepenseCrudController::configureFilters()"/>
         <argument key="App\Controller\Admin\MenueDepenseCrudController::index" type="service_closure" id=".service_locator._ewVeMD.App\Controller\Admin\MenueDepenseCrudController::index()"/>
@@ -12038,6 +12228,27 @@
         <argument key="App\Controller\Admin\BatimentCrudController:createNewForm" type="service_closure" id=".service_locator.5pLxdxQ.App\Controller\Admin\BatimentCrudController::createNewForm()"/>
         <argument key="App\Controller\Admin\BatimentCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.5pLxdxQ.App\Controller\Admin\BatimentCrudController::createNewFormBuilder()"/>
         <argument key="App\Controller\Admin\BatimentCrudController:configureResponseParameters" type="service_closure" id=".service_locator.8yyrqQl.App\Controller\Admin\BatimentCrudController::configureResponseParameters()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:configureCrud" type="service_closure" id=".service_locator.eVx11yR.App\Controller\Admin\CaisseConseilCrudController::configureCrud()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:configureAssets" type="service_closure" id=".service_locator.4g8KBWG.App\Controller\Admin\CaisseConseilCrudController::configureAssets()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:configureActions" type="service_closure" id=".service_locator.MygkM6_.App\Controller\Admin\CaisseConseilCrudController::configureActions()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:configureFilters" type="service_closure" id=".service_locator.vx1u6Ma.App\Controller\Admin\CaisseConseilCrudController::configureFilters()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:index" type="service_closure" id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::index()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:detail" type="service_closure" id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::detail()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:edit" type="service_closure" id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::edit()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:new" type="service_closure" id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::new()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:delete" type="service_closure" id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::delete()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:batchDelete" type="service_closure" id=".service_locator.Zxs0ZZ9.App\Controller\Admin\CaisseConseilCrudController::batchDelete()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:autocomplete" type="service_closure" id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::autocomplete()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator._Gfu5xe.App\Controller\Admin\CaisseConseilCrudController::createIndexQueryBuilder()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:renderFilters" type="service_closure" id=".service_locator._ewVeMD.App\Controller\Admin\CaisseConseilCrudController::renderFilters()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:updateEntity" type="service_closure" id=".service_locator.3BoFVFw.App\Controller\Admin\CaisseConseilCrudController::updateEntity()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:persistEntity" type="service_closure" id=".service_locator.3BoFVFw.App\Controller\Admin\CaisseConseilCrudController::persistEntity()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:deleteEntity" type="service_closure" id=".service_locator.3BoFVFw.App\Controller\Admin\CaisseConseilCrudController::deleteEntity()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:createEditForm" type="service_closure" id=".service_locator.5pLxdxQ.App\Controller\Admin\CaisseConseilCrudController::createEditForm()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.5pLxdxQ.App\Controller\Admin\CaisseConseilCrudController::createEditFormBuilder()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:createNewForm" type="service_closure" id=".service_locator.5pLxdxQ.App\Controller\Admin\CaisseConseilCrudController::createNewForm()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.5pLxdxQ.App\Controller\Admin\CaisseConseilCrudController::createNewFormBuilder()"/>
+        <argument key="App\Controller\Admin\CaisseConseilCrudController:configureResponseParameters" type="service_closure" id=".service_locator.8yyrqQl.App\Controller\Admin\CaisseConseilCrudController::configureResponseParameters()"/>
         <argument key="App\Controller\Admin\CoproprieteCrudController:configureActions" type="service_closure" id=".service_locator.MygkM6_.App\Controller\Admin\CoproprieteCrudController::configureActions()"/>
         <argument key="App\Controller\Admin\CoproprieteCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator._Gfu5xe.App\Controller\Admin\CoproprieteCrudController::createIndexQueryBuilder()"/>
         <argument key="App\Controller\Admin\CoproprieteCrudController:configureCrud" type="service_closure" id=".service_locator.eVx11yR.App\Controller\Admin\CoproprieteCrudController::configureCrud()"/>
@@ -12172,6 +12383,7 @@
         <argument key="App\Controller\Admin\MenueDepenseCrudController:updateEntity" type="service_closure" id=".service_locator.3BoFVFw.App\Controller\Admin\MenueDepenseCrudController::updateEntity()"/>
         <argument key="App\Controller\Admin\MenueDepenseCrudController:formatTextData" type="service_closure" id=".service_locator.8ywxHPS.App\Controller\Admin\MenueDepenseCrudController::formatTextData()"/>
         <argument key="App\Controller\Admin\MenueDepenseCrudController:export" type="service_closure" id=".service_locator.z0A7H.F.App\Controller\Admin\MenueDepenseCrudController::export()"/>
+        <argument key="App\Controller\Admin\MenueDepenseCrudController:createCaisse" type="service_closure" id=".service_locator.z0A7H.F.App\Controller\Admin\MenueDepenseCrudController::createCaisse()"/>
         <argument key="App\Controller\Admin\MenueDepenseCrudController:configureAssets" type="service_closure" id=".service_locator.4g8KBWG.App\Controller\Admin\MenueDepenseCrudController::configureAssets()"/>
         <argument key="App\Controller\Admin\MenueDepenseCrudController:configureFilters" type="service_closure" id=".service_locator.vx1u6Ma.App\Controller\Admin\MenueDepenseCrudController::configureFilters()"/>
         <argument key="App\Controller\Admin\MenueDepenseCrudController:index" type="service_closure" id=".service_locator._ewVeMD.App\Controller\Admin\MenueDepenseCrudController::index()"/>
@@ -12458,9 +12670,10 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.Dys8r8y" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.9QN1qBT" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\CaisseInitialType" type="service_closure" id="App\Form\CaisseInitialType"/>
         <argument key="App\Form\IncidentType" type="service_closure" id="App\Form\IncidentType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service_closure" id="form.type.form"/>
@@ -12616,12 +12829,13 @@
         <argument key="turbo.doctrine.event_listener" type="service_closure" id="turbo.doctrine.event_listener"/>
       </argument>
     </service>
-    <service id=".service_locator.tP3TLnt" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.bwS7c9H" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AscenseurRepository" type="service_closure" id="App\Repository\AscenseurRepository"/>
         <argument key="App\Repository\BadgeRepository" type="service_closure" id="App\Repository\BadgeRepository"/>
         <argument key="App\Repository\BatimentRepository" type="service_closure" id="App\Repository\BatimentRepository"/>
+        <argument key="App\Repository\CaisseConseilRepository" type="service_closure" id="App\Repository\CaisseConseilRepository"/>
         <argument key="App\Repository\CategorieDepenseRepository" type="service_closure" id="App\Repository\CategorieDepenseRepository"/>
         <argument key="App\Repository\CoproprieteRepository" type="service_closure" id="App\Repository\CoproprieteRepository"/>
         <argument key="App\Repository\CouleurRepository" type="service_closure" id="App\Repository\CouleurRepository"/>
@@ -12941,6 +13155,12 @@
     <service id=".service_locator.WOU_dzL.App\Controller\Admin\BatimentCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\BatimentCrudController"/>
       <argument>App\Controller\Admin\BatimentCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.WOU_dzL" method="withContext"/>
+    </service>
+    <service id=".service_locator.WOU_dzL.App\Controller\Admin\CaisseConseilCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CaisseConseilCrudController"/>
+      <argument>App\Controller\Admin\CaisseConseilCrudController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.WOU_dzL" method="withContext"/>
     </service>
@@ -13314,6 +13534,7 @@
           <argument>App\Kernel</argument>
           <argument>App\Controller\Admin\BadgeCrudController</argument>
           <argument>App\Controller\Admin\BatimentCrudController</argument>
+          <argument>App\Controller\Admin\CaisseConseilCrudController</argument>
           <argument>App\Controller\Admin\CoproprieteCrudController</argument>
           <argument>App\Controller\Admin\DashboardController</argument>
           <argument>App\Controller\Admin\DemoDashboardController</argument>
@@ -14632,7 +14853,7 @@
       <argument>oVBxJMqlSb</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/pools/system</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14640,7 +14861,7 @@
       <argument>cEfxpB+pnp</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/pools/system</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14648,7 +14869,7 @@
       <argument>OIaq-I46BS</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/pools/system</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14656,7 +14877,7 @@
       <argument>ZZPRHpynC8</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/pools/system</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14664,7 +14885,7 @@
       <argument>H+YN-mt9v7</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/pools/system</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14690,7 +14911,7 @@
       <argument>Th+jWvEw0l</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/pools/system</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14700,7 +14921,7 @@
       <argument>ms7+Y4vbXH</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/pools/system</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14708,7 +14929,7 @@
       <argument>MpTti4mPhk</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/pools/system</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14716,7 +14937,7 @@
       <argument>Q-CZl3r-G-</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/pools/system</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14724,7 +14945,7 @@
       <argument>v4G806ajAV</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/pools/system</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14732,7 +14953,7 @@
       <argument>so7jCT2gaX</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/pools/system</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14740,7 +14961,7 @@
       <argument>Ca3e+HFQ1Y</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/laragon/www/syndicopro2/var/cache/dev/pools/system</argument>
+      <argument>C:\laragon\www\syndicopro2\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14928,7 +15149,7 @@
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.ryAvHi4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.zYtb7xg"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.myrP3wv"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.W55Po6X"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id=".Psr\Log\LoggerInterface $request.logger" alias="monolog.logger.request"/>

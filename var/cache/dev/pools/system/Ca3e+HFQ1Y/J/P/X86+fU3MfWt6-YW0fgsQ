@@ -7,6 +7,9 @@ return [PHP_INT_MAX, [
     'App\\Entity\\Batiment' => [
         'App\\Controller\\Admin\\BatimentCrudController',
     ],
+    'App\\Entity\\CaisseConseil' => [
+        'App\\Controller\\Admin\\CaisseConseilCrudController',
+    ],
     'App\\Entity\\Copropriete' => [
         'App\\Controller\\Admin\\CoproprieteCrudController',
     ],

@@ -3,6 +3,7 @@
 return [PHP_INT_MAX, [
     'App\\Controller\\Admin\\BadgeCrudController' => 'App\\Entity\\Badge',
     'App\\Controller\\Admin\\BatimentCrudController' => 'App\\Entity\\Batiment',
+    'App\\Controller\\Admin\\CaisseConseilCrudController' => 'App\\Entity\\CaisseConseil',
     'App\\Controller\\Admin\\CoproprieteCrudController' => 'App\\Entity\\Copropriete',
     'App\\Controller\\Admin\\DepensePhotoCrudController' => 'App\\Entity\\Photo',
     'App\\Controller\\Admin\\DocumentCrudController' => 'App\\Entity\\Document',

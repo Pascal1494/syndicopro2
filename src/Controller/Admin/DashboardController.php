@@ -1,28 +1,33 @@
 <?php
 namespace App\Controller\Admin;
 
+use App\Controller\Admin\CaisseConseilCrudController;
 use App\Controller\Admin\IncidentCrudController;
 use App\Entity\User;
 use App\Repository\BadgeRepository;
 use App\Repository\BatimentRepository;
+use App\Repository\CaisseConseilRepository;
 use App\Repository\CoproprieteRepository;
 use App\Repository\IncidentRepository;
 use App\Repository\LotRepository;
 use App\Repository\PrestataireRepository;
 use App\Repository\StockBadgeRepository;
 use App\Repository\UserRepository;
+use App\Service\CaisseConseilService;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
-use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Symfony\Component\Asset\Packages;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 #[AdminDashboard(routePath: '/admin', routeName: 'admin')]
 class DashboardController extends AbstractDashboardController
 {
+    private CaisseConseilRepository $repo;
+
     public function __construct(
         private UserRepository $userRepository,
         private BatimentRepository $batimentRepository,
@@ -33,23 +38,20 @@ class DashboardController extends AbstractDashboardController
         private PrestataireRepository $prestataireRepository, // ✨ NOUVEAU 2 : L'injection
         private IncidentRepository $incidentRepository,
         private AdminUrlGenerator $adminUrlGenerator, // ✨ ON L'AJOUTE ICI      // ✨ NOUVEAU
-        private Packages $assetPackages               // 👈 LE MOT "private" EST OBLIGATOIRE ICI !
-    ) {}
+        private Packages $assetPackages,              // 👈 LE MOT "private" EST OBLIGATOIRE ICI !
+        CaisseConseilRepository $repo,
+        private CaisseConseilService $caisseService
 
-    public function configureDashboard(): Dashboard
-    {
-
-        // 🚀 3. ON GÉNÈRE L'URL PARFAITE DE TON LOGO
-        $logoUrl = $this->assetPackages->getUrl('images/back-end/gestion72.png');
-
-        return Dashboard::new ()
-        // ✨ LA MAGIE DU HTML EST ICI
-            ->setTitle('<img src="' . $logoUrl . '" style="width: 30px; margin-right: 10px; vertical-align: middle;"> SYNDIC-COPRO');
-
+    ) {
+        $this->repo = $repo;
     }
 
+    
     public function index(): Response
     {
+        // 1. UTILISATION DU REPOSITORY INJECTÉ (Plus d'erreur de Service Locator)
+        $caisse = $this->repo->findOneBy([]);
+        $solde  = $caisse ? $caisse->getSolde() : null;
 
         /** @var User $user */
         $user  = $this->getUser();
@@ -72,6 +74,7 @@ class DashboardController extends AbstractDashboardController
 
         // ✨ On génère l'URL qui pointe vers le CRUD Incident
         $urlIncidents = $this->adminUrlGenerator
+            ->setDashboard(DashboardController::class) // 👈 LA SOLUTION EST ICI
             ->setController(IncidentCrudController::class)
             ->generateUrl();
 
@@ -93,7 +96,7 @@ class DashboardController extends AbstractDashboardController
             // ✨ NOUVEAU : Les 5 derniers badges (Syndic)
             $derniersBadges = $this->badgeRepository->findBy([], ['id' => 'DESC'], 5);
         }
-// --- SI C'EST LE GARDIEN / CONSEIL SYNDICAL ---
+        // --- SI C'EST LE GARDIEN / CONSEIL SYNDICAL ---
         else {
             $totalUsers     = $this->userRepository->count(['copropriete' => $copro]);
             $totalBuildings = $this->batimentRepository->count(['copropriete' => $copro]);
@@ -137,7 +140,6 @@ class DashboardController extends AbstractDashboardController
                 ->getResult();
 
             // ✨ NOUVEAU 3 : On récupère les contacts et prestataires
-            // Les membres du Conseil de CETTE copropriété
             $membresCS = $this->userRepository->createQueryBuilder('u')
                 ->where('u.copropriete = :copro')
                 ->andWhere('u.roles LIKE :role')
@@ -146,14 +148,12 @@ class DashboardController extends AbstractDashboardController
                 ->getQuery()
                 ->getResult();
 
-            // Le ou les Syndics (global)
             $syndics = $this->userRepository->createQueryBuilder('u')
                 ->where('u.roles LIKE :role')
                 ->setParameter('role', '%ROLE_SYNDIC%')
                 ->getQuery()
                 ->getResult();
 
-            // Les prestataires de CETTE copropriété (Jointure ManyToMany)
             $prestataires = $this->prestataireRepository->createQueryBuilder('p')
                 ->join('p.coproprietes', 'c')
                 ->where('c = :copro')
@@ -171,23 +171,25 @@ class DashboardController extends AbstractDashboardController
                 ->getResult();
         }
 
-        return parent::render('admin/dashboard.html.twig', [
+        // 2. UN SEUL ET UNIQUE RETURN À LA FIN
+        return $this->render('admin/dashboard.html.twig', [
+            'soldeCaisse'              => $solde, // 👈 Ajouté ici
             'total_users'              => $totalUsers,
             'total_buildings'          => $totalBuildings,
             'total_lots'               => $totalLots,
             'total_copropriete'        => $totalCoproprietes,
             'alertes_stock'            => $stocksEnAlerte,
             'ma_copro'                 => $copro ? $copro->getNom() : 'Global',
-            'total_badges_actifs'      => $totalBadgesActifs, // ✨ NOUVEAU
-            'derniers_badges'          => $derniersBadges,    // ✨ NOUVEAU
+            'total_badges_actifs'      => $totalBadgesActifs,
+            'derniers_badges'          => $derniersBadges,
 
             'membres_cs'               => $membresCS ?? [],
             'syndics'                  => $syndics ?? [],
             'prestataires'             => $prestataires ?? [],
-            'gardiens'                 => $gardiens ?? [], // 👈 ON AJOUTE CETTE LIGNE
+            'gardiens'                 => $gardiens ?? [],
 
             'url_incidents'            => $urlIncidents,
-            'total_nouveaux_incidents' => $totalNouveauxIncidents, // ✨ ON ENVOIE LA VARIABLE
+            'total_nouveaux_incidents' => $totalNouveauxIncidents,
         ]);
     }
 
@@ -246,6 +248,7 @@ class DashboardController extends AbstractDashboardController
         // yield MenuItem::linkTo(BudgetCaisseCrudController::class, 'Budget alloué', 'fas fa-wallet');
         yield MenuItem::linkTo(MenueDepenseCrudController::class, 'Caisse de Dépenses', 'fas fa-receipt')
             ->setPermission('ROLE_CONSEIL_S');
+        yield MenuItem::linkTo(CaisseConseilCrudController::class, 'Caisse du Conseil syndical', 'fa fa-piggy-bank');
 
         // Ajoute ton nouveau module ici
         // ✨ TON NOUVEAU LIEN VERS LES DOCUMENTS

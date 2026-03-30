@@ -86,6 +86,46 @@ return [PHP_INT_MAX, [
         'crudControllerFqcn' => 'App\\Controller\\Admin\\BatimentCrudController',
         'crudAction' => 'detail',
     ],
+    'admin_caisse_conseil_index' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController',
+        'crudAction' => 'index',
+    ],
+    'admin_caisse_conseil_new' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController',
+        'crudAction' => 'new',
+    ],
+    'admin_caisse_conseil_batch_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController',
+        'crudAction' => 'batchDelete',
+    ],
+    'admin_caisse_conseil_autocomplete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController',
+        'crudAction' => 'autocomplete',
+    ],
+    'admin_caisse_conseil_render_filters' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController',
+        'crudAction' => 'renderFilters',
+    ],
+    'admin_caisse_conseil_edit' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController',
+        'crudAction' => 'edit',
+    ],
+    'admin_caisse_conseil_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController',
+        'crudAction' => 'delete',
+    ],
+    'admin_caisse_conseil_detail' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController',
+        'crudAction' => 'detail',
+    ],
     'admin_copropriete_index' => [
         'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
         'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController',
@@ -569,6 +609,46 @@ return [PHP_INT_MAX, [
     'demo_admin_batiment_detail' => [
         'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController',
         'crudControllerFqcn' => 'App\\Controller\\Admin\\BatimentCrudController',
+        'crudAction' => 'detail',
+    ],
+    'demo_admin_caisse_conseil_index' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController',
+        'crudAction' => 'index',
+    ],
+    'demo_admin_caisse_conseil_new' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController',
+        'crudAction' => 'new',
+    ],
+    'demo_admin_caisse_conseil_batch_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController',
+        'crudAction' => 'batchDelete',
+    ],
+    'demo_admin_caisse_conseil_autocomplete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController',
+        'crudAction' => 'autocomplete',
+    ],
+    'demo_admin_caisse_conseil_render_filters' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController',
+        'crudAction' => 'renderFilters',
+    ],
+    'demo_admin_caisse_conseil_edit' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController',
+        'crudAction' => 'edit',
+    ],
+    'demo_admin_caisse_conseil_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController',
+        'crudAction' => 'delete',
+    ],
+    'demo_admin_caisse_conseil_detail' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController',
         'crudAction' => 'detail',
     ],
     'demo_admin_copropriete_index' => [

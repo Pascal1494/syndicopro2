@@ -2,8 +2,10 @@
 namespace App\Controller\Admin;
 
 use App\Controller\Admin\DepensePhotoCrudController;
+use App\Entity\CaisseConseil;
 use App\Entity\MenueDepense;
 use App\Entity\User;
+use App\Form\CaisseInitialType;
 use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
@@ -18,6 +20,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
@@ -39,6 +42,21 @@ class MenueDepenseCrudController extends AbstractCrudController
     // 🔒 SECURITÉ
     public function configureCrud(Crud $crud): Crud
     {
+        /** @var User $user */
+        $user  = $this->getUser();
+        $copro = $user->getCopropriete();
+
+        if ($copro && $copro->getCaisseConseil()) {
+            $solde = $copro->getCaisseConseil()->getSolde();
+
+            if ($solde < 0) {
+                $this->addFlash('danger', sprintf(
+                    '⚠️ Attention : la caisse du Conseil Syndical est en déficit (%.2f €).',
+                    $solde
+                ));
+            }
+        }
+
         return $crud
             ->setEntityPermission('ROLE_CONSEIL_S')
             ->setPageTitle('index', 'Menues Dépenses (Caisse CS)')
@@ -47,19 +65,30 @@ class MenueDepenseCrudController extends AbstractCrudController
 
     public function configureActions(Actions $actions): Actions
     {
-        // ✨ NOUVEAU : On utilise linkToRoute !
+        $user  = $this->getUser();
+        $copro = $user?->getCopropriete();
+
+        // Action Export Excel
         $exportAction = Action::new ('export', 'Exporter vers Excel', 'fas fa-file-excel')
-            ->linkToRoute('admin_export_depenses') // 👈 On pointe vers le nom de notre future route
+            ->linkToRoute('admin_export_depenses')
             ->createAsGlobalAction()
             ->setCssClass('btn btn-success')
-            ->setHtmlAttributes([
-                'target' => '_blank', // Ouvre un nouvel onglet propre
-            ]);
+            ->setHtmlAttributes(['target' => '_blank']);
+
+        // Action Créer la caisse
+        $createCaisse = Action::new ('createCaisse', 'Créer ma caisse', 'fas fa-piggy-bank')
+            ->linkToRoute('president_create_caisse')
+            ->createAsGlobalAction()
+            ->setCssClass('btn btn-primary');
+
+        // On ajoute l'action "Créer ma caisse" SEULEMENT si elle n'existe pas
+        if (! $copro || ! $copro->getCaisseConseil()) {
+            $actions = $actions->add(Crud::PAGE_INDEX, $createCaisse);
+        }
 
         return $actions
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->add(Crud::PAGE_INDEX, $exportAction);
-
     }
 
     public function configureFields(string $pageName): iterable
@@ -97,10 +126,34 @@ class MenueDepenseCrudController extends AbstractCrudController
                 'En attente' => 'warning',
                 'Validé'     => 'info',
                 'Remboursé'  => 'success',
-            ])->setPermission('ROLE_SYNDIC'),
+            ])->setDisabled(! $this->isGranted('ROLE_SYNDIC')),
+
 
             AssociationField::new ('copropriete', 'Copropriété concernée')
                 ->setPermission('ROLE_SYNDIC'),
+
+            // TextField::new ('soldeCaisse', 'Solde caisse (€)')
+            //     ->setCustomOption('mapped', false)
+            //     ->onlyOnIndex()
+            //     ->renderAsHtml()
+            //     ->formatValue(function ($value, $depense) {
+            //         $copro = $depense->getCopropriete();
+
+            //         if (! $copro || ! $copro->getCaisseConseil()) {
+            //             return "<span style='color:gray;'>—</span>";
+            //         }
+
+            //         $solde     = $copro->getCaisseConseil()->getSolde();
+            //         $formatted = number_format($solde, 2, ',', ' ') . ' €';
+
+            //         if ($solde < 0) {
+            //             return "<span style='color:red;font-weight:bold;'>$formatted</span>";
+            //         }
+
+            //         return "<span style='color:green;font-weight:bold;'>$formatted</span>";
+            //     })
+            // ,
+
         ];
     }
 
@@ -125,6 +178,12 @@ class MenueDepenseCrudController extends AbstractCrudController
         if ($entityInstance->getCopropriete() === null) {
             if ($user && method_exists($user, 'getCopropriete') && $user->getCopropriete()) {
                 $entityInstance->setCopropriete($user->getCopropriete());
+                // 🔗 Lier automatiquement la dépense à la caisse de la copropriété
+                $copro = $user->getCopropriete();
+                if ($copro && $copro->getCaisseConseil()) {
+                    $entityInstance->setCaisseConseil($copro->getCaisseConseil());
+                }
+
             }
         }
 
@@ -143,6 +202,11 @@ class MenueDepenseCrudController extends AbstractCrudController
         // Recalcul du total au cas où les quantités ont changé
         $total = $entityInstance->getPrixUnitaireTtc() * $entityInstance->getQuantite();
         $entityInstance->setTotalTtc($total);
+
+        $copro = $entityInstance->getCopropriete();
+        if ($copro && $copro->getCaisseConseil()) {
+            $entityInstance->setCaisseConseil($copro->getCaisseConseil());
+        }
 
         parent::updateEntity($entityManager, $entityInstance);
     }
@@ -243,4 +307,40 @@ class MenueDepenseCrudController extends AbstractCrudController
             $text
         );
     }
+
+    #[Route('/president/caisse/create', name: 'president_create_caisse')]
+    public function createCaisse(Request $request, EntityManagerInterface $em): Response
+    {
+        $user  = $this->getUser();
+        $copro = $user->getCopropriete();
+
+        if (! $copro) {
+            $this->addFlash('danger', "Vous n'êtes associé à aucune copropriété.");
+            return $this->redirectToRoute('admin');
+        }
+
+        if ($copro->getCaisseConseil()) {
+            $this->addFlash('warning', "La caisse existe déjà.");
+            return $this->redirectToRoute('admin');
+        }
+
+        $caisse = new CaisseConseil();
+        $form   = $this->createForm(CaisseInitialType::class, $caisse);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $caisse->setCopropriete($copro);
+            $em->persist($caisse);
+            $em->flush();
+
+            $this->addFlash('success', "Votre caisse a été créée.");
+            return $this->redirectToRoute('admin');
+        }
+
+        return $this->render('president/caisse_create.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
 }

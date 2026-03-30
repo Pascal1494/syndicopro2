@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Entity;
 
 use App\Repository\MenueDepenseRepository;
@@ -24,7 +25,7 @@ class MenueDepense
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTime $dateAchat = null;
 
-    #[ORM\Column(type : Types::TEXT, nullable: true)]
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $descriptionUsage = null;
 
     #[ORM\Column(nullable: true)]
@@ -55,9 +56,13 @@ class MenueDepense
     #[ORM\OneToMany(targetEntity: Photo::class, mappedBy: 'menueDepense', cascade: ['persist', 'remove'], orphanRemoval: true)]
     private Collection $photos;
 
+    #[ORM\ManyToOne(inversedBy: 'depenses')]
+    private ?CaisseConseil $caisseConseil = null;
+
     public function __construct()
     {
         $this->photos = new ArrayCollection();
+        $this->statut = 'En attente';
     }
 
     public function getId(): ?int
@@ -73,7 +78,6 @@ class MenueDepense
     public function setDesignation(string $designation): static
     {
         $this->designation = $designation;
-
         return $this;
     }
 
@@ -85,7 +89,6 @@ class MenueDepense
     public function setFournisseur(?string $fournisseur): static
     {
         $this->fournisseur = $fournisseur;
-
         return $this;
     }
 
@@ -97,7 +100,6 @@ class MenueDepense
     public function setDateAchat(\DateTime $dateAchat): static
     {
         $this->dateAchat = $dateAchat;
-
         return $this;
     }
 
@@ -109,7 +111,6 @@ class MenueDepense
     public function setDescriptionUsage(?string $descriptionUsage): static
     {
         $this->descriptionUsage = $descriptionUsage;
-
         return $this;
     }
 
@@ -121,7 +122,6 @@ class MenueDepense
     public function setPrixUnitaireHt(?float $prixUnitaireHt): static
     {
         $this->prixUnitaireHt = $prixUnitaireHt;
-
         return $this;
     }
 
@@ -133,7 +133,6 @@ class MenueDepense
     public function setPrixUnitaireTtc(float $prixUnitaireTtc): static
     {
         $this->prixUnitaireTtc = $prixUnitaireTtc;
-
         return $this;
     }
 
@@ -145,7 +144,6 @@ class MenueDepense
     public function setQuantite(int $quantite): static
     {
         $this->quantite = $quantite;
-
         return $this;
     }
 
@@ -157,7 +155,6 @@ class MenueDepense
     public function setTotalTtc(float $totalTtc): static
     {
         $this->totalTtc = $totalTtc;
-
         return $this;
     }
 
@@ -169,7 +166,6 @@ class MenueDepense
     public function setStatut(string $statut): static
     {
         $this->statut = $statut;
-
         return $this;
     }
 
@@ -181,7 +177,6 @@ class MenueDepense
     public function setAcheteur(?User $acheteur): static
     {
         $this->acheteur = $acheteur;
-
         return $this;
     }
 
@@ -193,7 +188,6 @@ class MenueDepense
     public function setCopropriete(?Copropriete $copropriete): static
     {
         $this->copropriete = $copropriete;
-
         return $this;
     }
 
@@ -207,23 +201,31 @@ class MenueDepense
 
     public function addPhoto(Photo $photo): static
     {
-        if (! $this->photos->contains($photo)) {
+        if (!$this->photos->contains($photo)) {
             $this->photos->add($photo);
             $photo->setMenueDepense($this);
         }
-
         return $this;
     }
 
     public function removePhoto(Photo $photo): static
     {
         if ($this->photos->removeElement($photo)) {
-            // set the owning side to null (unless already changed)
             if ($photo->getMenueDepense() === $this) {
                 $photo->setMenueDepense(null);
             }
         }
+        return $this;
+    }
 
+    public function getCaisseConseil(): ?CaisseConseil
+    {
+        return $this->caisseConseil;
+    }
+
+    public function setCaisseConseil(?CaisseConseil $caisseConseil): static
+    {
+        $this->caisseConseil = $caisseConseil;
         return $this;
     }
 }

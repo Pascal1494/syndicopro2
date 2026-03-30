@@ -63,6 +63,9 @@ class Copropriete
     #[ORM\OneToMany(targetEntity: Document::class, mappedBy: 'copropriete')]
     private Collection $documents;
 
+    #[ORM\OneToOne(mappedBy: 'copropriete', cascade: ['persist', 'remove'])]
+    private ?CaisseConseil $caisseConseil = null;
+
     public function __construct()
     {
         $this->batiments    = new ArrayCollection();
@@ -304,6 +307,23 @@ class Copropriete
                 $document->setCopropriete(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCaisseConseil(): ?CaisseConseil
+    {
+        return $this->caisseConseil;
+    }
+
+    public function setCaisseConseil(CaisseConseil $caisseConseil): static
+    {
+        // set the owning side of the relation if necessary
+        if ($caisseConseil->getCopropriete() !== $this) {
+            $caisseConseil->setCopropriete($this);
+        }
+
+        $this->caisseConseil = $caisseConseil;
 
         return $this;
     }

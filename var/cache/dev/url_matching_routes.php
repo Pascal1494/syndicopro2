@@ -19,6 +19,11 @@ return [
         '/admin/batiment/batch-delete' => [[['_route' => 'admin_batiment_batch_delete', '_controller' => 'App\\Controller\\Admin\\BatimentCrudController::batchDelete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BatimentCrudController', 'crudAction' => 'batchDelete'], null, ['POST' => 0], null, false, false, null]],
         '/admin/batiment/autocomplete' => [[['_route' => 'admin_batiment_autocomplete', '_controller' => 'App\\Controller\\Admin\\BatimentCrudController::autocomplete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BatimentCrudController', 'crudAction' => 'autocomplete'], null, ['GET' => 0], null, false, false, null]],
         '/admin/batiment/render-filters' => [[['_route' => 'admin_batiment_render_filters', '_controller' => 'App\\Controller\\Admin\\BatimentCrudController::renderFilters', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BatimentCrudController', 'crudAction' => 'renderFilters'], null, ['GET' => 0], null, false, false, null]],
+        '/admin/caisse-conseil' => [[['_route' => 'admin_caisse_conseil_index', '_controller' => 'App\\Controller\\Admin\\CaisseConseilCrudController::index', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController', 'crudAction' => 'index'], null, ['GET' => 0], null, false, false, null]],
+        '/admin/caisse-conseil/new' => [[['_route' => 'admin_caisse_conseil_new', '_controller' => 'App\\Controller\\Admin\\CaisseConseilCrudController::new', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController', 'crudAction' => 'new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/admin/caisse-conseil/batch-delete' => [[['_route' => 'admin_caisse_conseil_batch_delete', '_controller' => 'App\\Controller\\Admin\\CaisseConseilCrudController::batchDelete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController', 'crudAction' => 'batchDelete'], null, ['POST' => 0], null, false, false, null]],
+        '/admin/caisse-conseil/autocomplete' => [[['_route' => 'admin_caisse_conseil_autocomplete', '_controller' => 'App\\Controller\\Admin\\CaisseConseilCrudController::autocomplete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController', 'crudAction' => 'autocomplete'], null, ['GET' => 0], null, false, false, null]],
+        '/admin/caisse-conseil/render-filters' => [[['_route' => 'admin_caisse_conseil_render_filters', '_controller' => 'App\\Controller\\Admin\\CaisseConseilCrudController::renderFilters', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController', 'crudAction' => 'renderFilters'], null, ['GET' => 0], null, false, false, null]],
         '/admin/copropriete' => [[['_route' => 'admin_copropriete_index', '_controller' => 'App\\Controller\\Admin\\CoproprieteCrudController::index', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController', 'crudAction' => 'index'], null, ['GET' => 0], null, false, false, null]],
         '/admin/copropriete/new' => [[['_route' => 'admin_copropriete_new', '_controller' => 'App\\Controller\\Admin\\CoproprieteCrudController::new', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController', 'crudAction' => 'new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/admin/copropriete/batch-delete' => [[['_route' => 'admin_copropriete_batch_delete', '_controller' => 'App\\Controller\\Admin\\CoproprieteCrudController::batchDelete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController', 'crudAction' => 'batchDelete'], null, ['POST' => 0], null, false, false, null]],
@@ -80,6 +85,11 @@ return [
         '/demo-admin/batiment/batch-delete' => [[['_route' => 'demo_admin_batiment_batch_delete', '_controller' => 'App\\Controller\\Admin\\BatimentCrudController::batchDelete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BatimentCrudController', 'crudAction' => 'batchDelete'], null, ['POST' => 0], null, false, false, null]],
         '/demo-admin/batiment/autocomplete' => [[['_route' => 'demo_admin_batiment_autocomplete', '_controller' => 'App\\Controller\\Admin\\BatimentCrudController::autocomplete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BatimentCrudController', 'crudAction' => 'autocomplete'], null, ['GET' => 0], null, false, false, null]],
         '/demo-admin/batiment/render-filters' => [[['_route' => 'demo_admin_batiment_render_filters', '_controller' => 'App\\Controller\\Admin\\BatimentCrudController::renderFilters', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BatimentCrudController', 'crudAction' => 'renderFilters'], null, ['GET' => 0], null, false, false, null]],
+        '/demo-admin/caisse-conseil' => [[['_route' => 'demo_admin_caisse_conseil_index', '_controller' => 'App\\Controller\\Admin\\CaisseConseilCrudController::index', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController', 'crudAction' => 'index'], null, ['GET' => 0], null, false, false, null]],
+        '/demo-admin/caisse-conseil/new' => [[['_route' => 'demo_admin_caisse_conseil_new', '_controller' => 'App\\Controller\\Admin\\CaisseConseilCrudController::new', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController', 'crudAction' => 'new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/demo-admin/caisse-conseil/batch-delete' => [[['_route' => 'demo_admin_caisse_conseil_batch_delete', '_controller' => 'App\\Controller\\Admin\\CaisseConseilCrudController::batchDelete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController', 'crudAction' => 'batchDelete'], null, ['POST' => 0], null, false, false, null]],
+        '/demo-admin/caisse-conseil/autocomplete' => [[['_route' => 'demo_admin_caisse_conseil_autocomplete', '_controller' => 'App\\Controller\\Admin\\CaisseConseilCrudController::autocomplete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController', 'crudAction' => 'autocomplete'], null, ['GET' => 0], null, false, false, null]],
+        '/demo-admin/caisse-conseil/render-filters' => [[['_route' => 'demo_admin_caisse_conseil_render_filters', '_controller' => 'App\\Controller\\Admin\\CaisseConseilCrudController::renderFilters', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController', 'crudAction' => 'renderFilters'], null, ['GET' => 0], null, false, false, null]],
         '/demo-admin/copropriete' => [[['_route' => 'demo_admin_copropriete_index', '_controller' => 'App\\Controller\\Admin\\CoproprieteCrudController::index', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController', 'crudAction' => 'index'], null, ['GET' => 0], null, false, false, null]],
         '/demo-admin/copropriete/new' => [[['_route' => 'demo_admin_copropriete_new', '_controller' => 'App\\Controller\\Admin\\CoproprieteCrudController::new', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController', 'crudAction' => 'new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/demo-admin/copropriete/batch-delete' => [[['_route' => 'demo_admin_copropriete_batch_delete', '_controller' => 'App\\Controller\\Admin\\CoproprieteCrudController::batchDelete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController', 'crudAction' => 'batchDelete'], null, ['POST' => 0], null, false, false, null]],
@@ -138,6 +148,7 @@ return [
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/admin/export-depenses' => [[['_route' => 'admin_export_depenses', '_controller' => 'App\\Controller\\Admin\\MenueDepenseCrudController::export'], null, null, null, false, false, null]],
+        '/president/caisse/create' => [[['_route' => 'president_create_caisse', '_controller' => 'App\\Controller\\Admin\\MenueDepenseCrudController::createCaisse'], null, null, null, false, false, null]],
         '/dashboard' => [[['_route' => 'app_dashboard', '_controller' => 'App\\Controller\\DashboardController::index'], null, null, null, false, false, null]],
         '/demo' => [[['_route' => 'app_demo', '_controller' => 'App\\Controller\\DemoController::index'], null, null, null, false, false, null]],
         '/demo/test' => [[['_route' => 'app_demo_test', '_controller' => 'App\\Controller\\DemoController::test'], null, null, null, false, false, null]],
@@ -169,192 +180,210 @@ return [
                             .'|(*:123)'
                         .')'
                     .')'
-                    .'|copropriete/([^/]++)(?'
-                        .'|/(?'
-                            .'|edit(*:164)'
-                            .'|delete(*:178)'
+                    .'|c(?'
+                        .'|aisse\\-conseil/([^/]++)(?'
+                            .'|/(?'
+                                .'|edit(*:171)'
+                                .'|delete(*:185)'
+                            .')'
+                            .'|(*:194)'
                         .')'
-                        .'|(*:187)'
-                    .')'
-                    .'|d(?'
-                        .'|epense\\-photo/([^/]++)(?'
+                        .'|opropriete/([^/]++)(?'
                             .'|/(?'
                                 .'|edit(*:233)'
                                 .'|delete(*:247)'
                             .')'
                             .'|(*:256)'
                         .')'
+                    .')'
+                    .'|d(?'
+                        .'|epense\\-photo/([^/]++)(?'
+                            .'|/(?'
+                                .'|edit(*:303)'
+                                .'|delete(*:317)'
+                            .')'
+                            .'|(*:326)'
+                        .')'
                         .'|ocument/([^/]++)(?'
                             .'|/(?'
-                                .'|edit(*:292)'
-                                .'|delete(*:306)'
+                                .'|edit(*:362)'
+                                .'|delete(*:376)'
                             .')'
-                            .'|(*:315)'
+                            .'|(*:385)'
                         .')'
                     .')'
                     .'|incident(?'
                         .'|/([^/]++)(?'
                             .'|/(?'
-                                .'|edit(*:356)'
-                                .'|delete(*:370)'
+                                .'|edit(*:426)'
+                                .'|delete(*:440)'
                             .')'
-                            .'|(*:379)'
+                            .'|(*:449)'
                         .')'
                         .'|\\-photo/([^/]++)(?'
                             .'|/(?'
-                                .'|edit(*:415)'
-                                .'|delete(*:429)'
+                                .'|edit(*:485)'
+                                .'|delete(*:499)'
                             .')'
-                            .'|(*:438)'
+                            .'|(*:508)'
                         .')'
                     .')'
                     .'|lot/([^/]++)(?'
                         .'|/(?'
-                            .'|edit(*:471)'
-                            .'|delete(*:485)'
+                            .'|edit(*:541)'
+                            .'|delete(*:555)'
                         .')'
-                        .'|(*:494)'
+                        .'|(*:564)'
                     .')'
                     .'|menue\\-depense/([^/]++)(?'
                         .'|/(?'
-                            .'|edit(*:537)'
-                            .'|delete(*:551)'
+                            .'|edit(*:607)'
+                            .'|delete(*:621)'
                         .')'
-                        .'|(*:560)'
+                        .'|(*:630)'
                     .')'
                     .'|prestataire/([^/]++)(?'
                         .'|/(?'
-                            .'|edit(*:600)'
-                            .'|delete(*:614)'
+                            .'|edit(*:670)'
+                            .'|delete(*:684)'
                         .')'
-                        .'|(*:623)'
+                        .'|(*:693)'
                     .')'
                     .'|stock\\-badge/([^/]++)(?'
                         .'|/(?'
-                            .'|edit(*:664)'
-                            .'|delete(*:678)'
+                            .'|edit(*:734)'
+                            .'|delete(*:748)'
                         .')'
-                        .'|(*:687)'
+                        .'|(*:757)'
                     .')'
                     .'|user/([^/]++)(?'
                         .'|/(?'
-                            .'|edit(*:720)'
-                            .'|delete(*:734)'
+                            .'|edit(*:790)'
+                            .'|delete(*:804)'
                         .')'
-                        .'|(*:743)'
+                        .'|(*:813)'
                     .')'
                 .')'
                 .'|/demo\\-admin/(?'
                     .'|ba(?'
                         .'|dge/([^/]++)(?'
                             .'|/(?'
-                                .'|edit(*:797)'
-                                .'|delete(*:811)'
+                                .'|edit(*:867)'
+                                .'|delete(*:881)'
                             .')'
-                            .'|(*:820)'
+                            .'|(*:890)'
                         .')'
                         .'|timent/([^/]++)(?'
                             .'|/(?'
-                                .'|edit(*:855)'
-                                .'|delete(*:869)'
+                                .'|edit(*:925)'
+                                .'|delete(*:939)'
                             .')'
-                            .'|(*:878)'
+                            .'|(*:948)'
                         .')'
                     .')'
-                    .'|copropriete/([^/]++)(?'
-                        .'|/(?'
-                            .'|edit(*:919)'
-                            .'|delete(*:933)'
+                    .'|c(?'
+                        .'|aisse\\-conseil/([^/]++)(?'
+                            .'|/(?'
+                                .'|edit(*:996)'
+                                .'|delete(*:1010)'
+                            .')'
+                            .'|(*:1020)'
                         .')'
-                        .'|(*:942)'
+                        .'|opropriete/([^/]++)(?'
+                            .'|/(?'
+                                .'|edit(*:1060)'
+                                .'|delete(*:1075)'
+                            .')'
+                            .'|(*:1085)'
+                        .')'
                     .')'
                     .'|d(?'
                         .'|epense\\-photo/([^/]++)(?'
                             .'|/(?'
-                                .'|edit(*:988)'
-                                .'|delete(*:1002)'
+                                .'|edit(*:1133)'
+                                .'|delete(*:1148)'
                             .')'
-                            .'|(*:1012)'
+                            .'|(*:1158)'
                         .')'
                         .'|ocument/([^/]++)(?'
                             .'|/(?'
-                                .'|edit(*:1049)'
-                                .'|delete(*:1064)'
+                                .'|edit(*:1195)'
+                                .'|delete(*:1210)'
                             .')'
-                            .'|(*:1074)'
+                            .'|(*:1220)'
                         .')'
                     .')'
                     .'|incident(?'
                         .'|/([^/]++)(?'
                             .'|/(?'
-                                .'|edit(*:1116)'
-                                .'|delete(*:1131)'
+                                .'|edit(*:1262)'
+                                .'|delete(*:1277)'
                             .')'
-                            .'|(*:1141)'
+                            .'|(*:1287)'
                         .')'
                         .'|\\-photo/([^/]++)(?'
                             .'|/(?'
-                                .'|edit(*:1178)'
-                                .'|delete(*:1193)'
+                                .'|edit(*:1324)'
+                                .'|delete(*:1339)'
                             .')'
-                            .'|(*:1203)'
+                            .'|(*:1349)'
                         .')'
                     .')'
                     .'|lot/([^/]++)(?'
                         .'|/(?'
-                            .'|edit(*:1237)'
-                            .'|delete(*:1252)'
+                            .'|edit(*:1383)'
+                            .'|delete(*:1398)'
                         .')'
-                        .'|(*:1262)'
+                        .'|(*:1408)'
                     .')'
                     .'|menue\\-depense/([^/]++)(?'
                         .'|/(?'
-                            .'|edit(*:1306)'
-                            .'|delete(*:1321)'
+                            .'|edit(*:1452)'
+                            .'|delete(*:1467)'
                         .')'
-                        .'|(*:1331)'
+                        .'|(*:1477)'
                     .')'
                     .'|prestataire/([^/]++)(?'
                         .'|/(?'
-                            .'|edit(*:1372)'
-                            .'|delete(*:1387)'
+                            .'|edit(*:1518)'
+                            .'|delete(*:1533)'
                         .')'
-                        .'|(*:1397)'
+                        .'|(*:1543)'
                     .')'
                     .'|stock\\-badge/([^/]++)(?'
                         .'|/(?'
-                            .'|edit(*:1439)'
-                            .'|delete(*:1454)'
+                            .'|edit(*:1585)'
+                            .'|delete(*:1600)'
                         .')'
-                        .'|(*:1464)'
+                        .'|(*:1610)'
                     .')'
                     .'|user/([^/]++)(?'
                         .'|/(?'
-                            .'|edit(*:1498)'
-                            .'|delete(*:1513)'
+                            .'|edit(*:1644)'
+                            .'|delete(*:1659)'
                         .')'
-                        .'|(*:1523)'
+                        .'|(*:1669)'
                     .')'
                 .')'
                 .'|/_(?'
-                    .'|error/(\\d+)(?:\\.([^/]++))?(*:1565)'
-                    .'|wdt/([^/]++)(*:1586)'
+                    .'|error/(\\d+)(?:\\.([^/]++))?(*:1711)'
+                    .'|wdt/([^/]++)(*:1732)'
                     .'|profiler/(?'
-                        .'|font/([^/\\.]++)\\.woff2(*:1629)'
+                        .'|font/([^/\\.]++)\\.woff2(*:1775)'
                         .'|([^/]++)(?'
                             .'|/(?'
-                                .'|search/results(*:1667)'
-                                .'|router(*:1682)'
+                                .'|search/results(*:1813)'
+                                .'|router(*:1828)'
                                 .'|exception(?'
-                                    .'|(*:1703)'
-                                    .'|\\.css(*:1717)'
+                                    .'|(*:1849)'
+                                    .'|\\.css(*:1863)'
                                 .')'
                             .')'
-                            .'|(*:1728)'
+                            .'|(*:1874)'
                         .')'
                     .')'
                 .')'
-                .'|/get\\-batiments/([^/]++)(*:1764)'
+                .'|/get\\-batiments/([^/]++)(*:1910)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -364,81 +393,87 @@ return [
         100 => [[['_route' => 'admin_batiment_edit', '_controller' => 'App\\Controller\\Admin\\BatimentCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BatimentCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
         114 => [[['_route' => 'admin_batiment_delete', '_controller' => 'App\\Controller\\Admin\\BatimentCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BatimentCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
         123 => [[['_route' => 'admin_batiment_detail', '_controller' => 'App\\Controller\\Admin\\BatimentCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BatimentCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        164 => [[['_route' => 'admin_copropriete_edit', '_controller' => 'App\\Controller\\Admin\\CoproprieteCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        178 => [[['_route' => 'admin_copropriete_delete', '_controller' => 'App\\Controller\\Admin\\CoproprieteCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        187 => [[['_route' => 'admin_copropriete_detail', '_controller' => 'App\\Controller\\Admin\\CoproprieteCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        233 => [[['_route' => 'admin_depense_photo_edit', '_controller' => 'App\\Controller\\Admin\\DepensePhotoCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DepensePhotoCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        247 => [[['_route' => 'admin_depense_photo_delete', '_controller' => 'App\\Controller\\Admin\\DepensePhotoCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DepensePhotoCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        256 => [[['_route' => 'admin_depense_photo_detail', '_controller' => 'App\\Controller\\Admin\\DepensePhotoCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DepensePhotoCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        292 => [[['_route' => 'admin_document_edit', '_controller' => 'App\\Controller\\Admin\\DocumentCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DocumentCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        306 => [[['_route' => 'admin_document_delete', '_controller' => 'App\\Controller\\Admin\\DocumentCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DocumentCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        315 => [[['_route' => 'admin_document_detail', '_controller' => 'App\\Controller\\Admin\\DocumentCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DocumentCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        356 => [[['_route' => 'admin_incident_edit', '_controller' => 'App\\Controller\\Admin\\IncidentCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        370 => [[['_route' => 'admin_incident_delete', '_controller' => 'App\\Controller\\Admin\\IncidentCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        379 => [[['_route' => 'admin_incident_detail', '_controller' => 'App\\Controller\\Admin\\IncidentCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        415 => [[['_route' => 'admin_incident_photo_edit', '_controller' => 'App\\Controller\\Admin\\IncidentPhotoCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentPhotoCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        429 => [[['_route' => 'admin_incident_photo_delete', '_controller' => 'App\\Controller\\Admin\\IncidentPhotoCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentPhotoCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        438 => [[['_route' => 'admin_incident_photo_detail', '_controller' => 'App\\Controller\\Admin\\IncidentPhotoCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentPhotoCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        471 => [[['_route' => 'admin_lot_edit', '_controller' => 'App\\Controller\\Admin\\LotCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\LotCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        485 => [[['_route' => 'admin_lot_delete', '_controller' => 'App\\Controller\\Admin\\LotCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\LotCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        494 => [[['_route' => 'admin_lot_detail', '_controller' => 'App\\Controller\\Admin\\LotCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\LotCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        537 => [[['_route' => 'admin_menue_depense_edit', '_controller' => 'App\\Controller\\Admin\\MenueDepenseCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\MenueDepenseCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        551 => [[['_route' => 'admin_menue_depense_delete', '_controller' => 'App\\Controller\\Admin\\MenueDepenseCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\MenueDepenseCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        560 => [[['_route' => 'admin_menue_depense_detail', '_controller' => 'App\\Controller\\Admin\\MenueDepenseCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\MenueDepenseCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        600 => [[['_route' => 'admin_prestataire_edit', '_controller' => 'App\\Controller\\Admin\\PrestataireCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PrestataireCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        614 => [[['_route' => 'admin_prestataire_delete', '_controller' => 'App\\Controller\\Admin\\PrestataireCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PrestataireCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        623 => [[['_route' => 'admin_prestataire_detail', '_controller' => 'App\\Controller\\Admin\\PrestataireCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PrestataireCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        664 => [[['_route' => 'admin_stock_badge_edit', '_controller' => 'App\\Controller\\Admin\\StockBadgeCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\StockBadgeCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        678 => [[['_route' => 'admin_stock_badge_delete', '_controller' => 'App\\Controller\\Admin\\StockBadgeCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\StockBadgeCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        687 => [[['_route' => 'admin_stock_badge_detail', '_controller' => 'App\\Controller\\Admin\\StockBadgeCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\StockBadgeCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        720 => [[['_route' => 'admin_user_edit', '_controller' => 'App\\Controller\\Admin\\UserCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        734 => [[['_route' => 'admin_user_delete', '_controller' => 'App\\Controller\\Admin\\UserCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        743 => [[['_route' => 'admin_user_detail', '_controller' => 'App\\Controller\\Admin\\UserCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        797 => [[['_route' => 'demo_admin_badge_edit', '_controller' => 'App\\Controller\\Admin\\BadgeCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BadgeCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        811 => [[['_route' => 'demo_admin_badge_delete', '_controller' => 'App\\Controller\\Admin\\BadgeCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BadgeCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        820 => [[['_route' => 'demo_admin_badge_detail', '_controller' => 'App\\Controller\\Admin\\BadgeCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BadgeCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        855 => [[['_route' => 'demo_admin_batiment_edit', '_controller' => 'App\\Controller\\Admin\\BatimentCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BatimentCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        869 => [[['_route' => 'demo_admin_batiment_delete', '_controller' => 'App\\Controller\\Admin\\BatimentCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BatimentCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        878 => [[['_route' => 'demo_admin_batiment_detail', '_controller' => 'App\\Controller\\Admin\\BatimentCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BatimentCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        919 => [[['_route' => 'demo_admin_copropriete_edit', '_controller' => 'App\\Controller\\Admin\\CoproprieteCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        933 => [[['_route' => 'demo_admin_copropriete_delete', '_controller' => 'App\\Controller\\Admin\\CoproprieteCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        942 => [[['_route' => 'demo_admin_copropriete_detail', '_controller' => 'App\\Controller\\Admin\\CoproprieteCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        988 => [[['_route' => 'demo_admin_depense_photo_edit', '_controller' => 'App\\Controller\\Admin\\DepensePhotoCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DepensePhotoCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1002 => [[['_route' => 'demo_admin_depense_photo_delete', '_controller' => 'App\\Controller\\Admin\\DepensePhotoCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DepensePhotoCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1012 => [[['_route' => 'demo_admin_depense_photo_detail', '_controller' => 'App\\Controller\\Admin\\DepensePhotoCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DepensePhotoCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1049 => [[['_route' => 'demo_admin_document_edit', '_controller' => 'App\\Controller\\Admin\\DocumentCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DocumentCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1064 => [[['_route' => 'demo_admin_document_delete', '_controller' => 'App\\Controller\\Admin\\DocumentCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DocumentCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1074 => [[['_route' => 'demo_admin_document_detail', '_controller' => 'App\\Controller\\Admin\\DocumentCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DocumentCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1116 => [[['_route' => 'demo_admin_incident_edit', '_controller' => 'App\\Controller\\Admin\\IncidentCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1131 => [[['_route' => 'demo_admin_incident_delete', '_controller' => 'App\\Controller\\Admin\\IncidentCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1141 => [[['_route' => 'demo_admin_incident_detail', '_controller' => 'App\\Controller\\Admin\\IncidentCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1178 => [[['_route' => 'demo_admin_incident_photo_edit', '_controller' => 'App\\Controller\\Admin\\IncidentPhotoCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentPhotoCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1193 => [[['_route' => 'demo_admin_incident_photo_delete', '_controller' => 'App\\Controller\\Admin\\IncidentPhotoCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentPhotoCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1203 => [[['_route' => 'demo_admin_incident_photo_detail', '_controller' => 'App\\Controller\\Admin\\IncidentPhotoCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentPhotoCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1237 => [[['_route' => 'demo_admin_lot_edit', '_controller' => 'App\\Controller\\Admin\\LotCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\LotCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1252 => [[['_route' => 'demo_admin_lot_delete', '_controller' => 'App\\Controller\\Admin\\LotCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\LotCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1262 => [[['_route' => 'demo_admin_lot_detail', '_controller' => 'App\\Controller\\Admin\\LotCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\LotCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1306 => [[['_route' => 'demo_admin_menue_depense_edit', '_controller' => 'App\\Controller\\Admin\\MenueDepenseCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\MenueDepenseCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1321 => [[['_route' => 'demo_admin_menue_depense_delete', '_controller' => 'App\\Controller\\Admin\\MenueDepenseCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\MenueDepenseCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1331 => [[['_route' => 'demo_admin_menue_depense_detail', '_controller' => 'App\\Controller\\Admin\\MenueDepenseCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\MenueDepenseCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1372 => [[['_route' => 'demo_admin_prestataire_edit', '_controller' => 'App\\Controller\\Admin\\PrestataireCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PrestataireCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1387 => [[['_route' => 'demo_admin_prestataire_delete', '_controller' => 'App\\Controller\\Admin\\PrestataireCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PrestataireCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1397 => [[['_route' => 'demo_admin_prestataire_detail', '_controller' => 'App\\Controller\\Admin\\PrestataireCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PrestataireCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1439 => [[['_route' => 'demo_admin_stock_badge_edit', '_controller' => 'App\\Controller\\Admin\\StockBadgeCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\StockBadgeCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1454 => [[['_route' => 'demo_admin_stock_badge_delete', '_controller' => 'App\\Controller\\Admin\\StockBadgeCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\StockBadgeCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1464 => [[['_route' => 'demo_admin_stock_badge_detail', '_controller' => 'App\\Controller\\Admin\\StockBadgeCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\StockBadgeCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1498 => [[['_route' => 'demo_admin_user_edit', '_controller' => 'App\\Controller\\Admin\\UserCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1513 => [[['_route' => 'demo_admin_user_delete', '_controller' => 'App\\Controller\\Admin\\UserCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1523 => [[['_route' => 'demo_admin_user_detail', '_controller' => 'App\\Controller\\Admin\\UserCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1565 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        1586 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
-        1629 => [[['_route' => '_profiler_font', '_controller' => 'web_profiler.controller.profiler::fontAction'], ['fontName'], null, null, false, false, null]],
-        1667 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
-        1682 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
-        1703 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
-        1717 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        1728 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        1764 => [
+        171 => [[['_route' => 'admin_caisse_conseil_edit', '_controller' => 'App\\Controller\\Admin\\CaisseConseilCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        185 => [[['_route' => 'admin_caisse_conseil_delete', '_controller' => 'App\\Controller\\Admin\\CaisseConseilCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        194 => [[['_route' => 'admin_caisse_conseil_detail', '_controller' => 'App\\Controller\\Admin\\CaisseConseilCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        233 => [[['_route' => 'admin_copropriete_edit', '_controller' => 'App\\Controller\\Admin\\CoproprieteCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        247 => [[['_route' => 'admin_copropriete_delete', '_controller' => 'App\\Controller\\Admin\\CoproprieteCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        256 => [[['_route' => 'admin_copropriete_detail', '_controller' => 'App\\Controller\\Admin\\CoproprieteCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        303 => [[['_route' => 'admin_depense_photo_edit', '_controller' => 'App\\Controller\\Admin\\DepensePhotoCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DepensePhotoCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        317 => [[['_route' => 'admin_depense_photo_delete', '_controller' => 'App\\Controller\\Admin\\DepensePhotoCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DepensePhotoCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        326 => [[['_route' => 'admin_depense_photo_detail', '_controller' => 'App\\Controller\\Admin\\DepensePhotoCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DepensePhotoCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        362 => [[['_route' => 'admin_document_edit', '_controller' => 'App\\Controller\\Admin\\DocumentCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DocumentCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        376 => [[['_route' => 'admin_document_delete', '_controller' => 'App\\Controller\\Admin\\DocumentCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DocumentCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        385 => [[['_route' => 'admin_document_detail', '_controller' => 'App\\Controller\\Admin\\DocumentCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DocumentCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        426 => [[['_route' => 'admin_incident_edit', '_controller' => 'App\\Controller\\Admin\\IncidentCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        440 => [[['_route' => 'admin_incident_delete', '_controller' => 'App\\Controller\\Admin\\IncidentCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        449 => [[['_route' => 'admin_incident_detail', '_controller' => 'App\\Controller\\Admin\\IncidentCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        485 => [[['_route' => 'admin_incident_photo_edit', '_controller' => 'App\\Controller\\Admin\\IncidentPhotoCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentPhotoCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        499 => [[['_route' => 'admin_incident_photo_delete', '_controller' => 'App\\Controller\\Admin\\IncidentPhotoCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentPhotoCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        508 => [[['_route' => 'admin_incident_photo_detail', '_controller' => 'App\\Controller\\Admin\\IncidentPhotoCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentPhotoCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        541 => [[['_route' => 'admin_lot_edit', '_controller' => 'App\\Controller\\Admin\\LotCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\LotCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        555 => [[['_route' => 'admin_lot_delete', '_controller' => 'App\\Controller\\Admin\\LotCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\LotCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        564 => [[['_route' => 'admin_lot_detail', '_controller' => 'App\\Controller\\Admin\\LotCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\LotCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        607 => [[['_route' => 'admin_menue_depense_edit', '_controller' => 'App\\Controller\\Admin\\MenueDepenseCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\MenueDepenseCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        621 => [[['_route' => 'admin_menue_depense_delete', '_controller' => 'App\\Controller\\Admin\\MenueDepenseCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\MenueDepenseCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        630 => [[['_route' => 'admin_menue_depense_detail', '_controller' => 'App\\Controller\\Admin\\MenueDepenseCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\MenueDepenseCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        670 => [[['_route' => 'admin_prestataire_edit', '_controller' => 'App\\Controller\\Admin\\PrestataireCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PrestataireCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        684 => [[['_route' => 'admin_prestataire_delete', '_controller' => 'App\\Controller\\Admin\\PrestataireCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PrestataireCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        693 => [[['_route' => 'admin_prestataire_detail', '_controller' => 'App\\Controller\\Admin\\PrestataireCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PrestataireCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        734 => [[['_route' => 'admin_stock_badge_edit', '_controller' => 'App\\Controller\\Admin\\StockBadgeCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\StockBadgeCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        748 => [[['_route' => 'admin_stock_badge_delete', '_controller' => 'App\\Controller\\Admin\\StockBadgeCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\StockBadgeCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        757 => [[['_route' => 'admin_stock_badge_detail', '_controller' => 'App\\Controller\\Admin\\StockBadgeCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\StockBadgeCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        790 => [[['_route' => 'admin_user_edit', '_controller' => 'App\\Controller\\Admin\\UserCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        804 => [[['_route' => 'admin_user_delete', '_controller' => 'App\\Controller\\Admin\\UserCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        813 => [[['_route' => 'admin_user_detail', '_controller' => 'App\\Controller\\Admin\\UserCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        867 => [[['_route' => 'demo_admin_badge_edit', '_controller' => 'App\\Controller\\Admin\\BadgeCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BadgeCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        881 => [[['_route' => 'demo_admin_badge_delete', '_controller' => 'App\\Controller\\Admin\\BadgeCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BadgeCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        890 => [[['_route' => 'demo_admin_badge_detail', '_controller' => 'App\\Controller\\Admin\\BadgeCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BadgeCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        925 => [[['_route' => 'demo_admin_batiment_edit', '_controller' => 'App\\Controller\\Admin\\BatimentCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BatimentCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        939 => [[['_route' => 'demo_admin_batiment_delete', '_controller' => 'App\\Controller\\Admin\\BatimentCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BatimentCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        948 => [[['_route' => 'demo_admin_batiment_detail', '_controller' => 'App\\Controller\\Admin\\BatimentCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\BatimentCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        996 => [[['_route' => 'demo_admin_caisse_conseil_edit', '_controller' => 'App\\Controller\\Admin\\CaisseConseilCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1010 => [[['_route' => 'demo_admin_caisse_conseil_delete', '_controller' => 'App\\Controller\\Admin\\CaisseConseilCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1020 => [[['_route' => 'demo_admin_caisse_conseil_detail', '_controller' => 'App\\Controller\\Admin\\CaisseConseilCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CaisseConseilCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1060 => [[['_route' => 'demo_admin_copropriete_edit', '_controller' => 'App\\Controller\\Admin\\CoproprieteCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1075 => [[['_route' => 'demo_admin_copropriete_delete', '_controller' => 'App\\Controller\\Admin\\CoproprieteCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1085 => [[['_route' => 'demo_admin_copropriete_detail', '_controller' => 'App\\Controller\\Admin\\CoproprieteCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CoproprieteCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1133 => [[['_route' => 'demo_admin_depense_photo_edit', '_controller' => 'App\\Controller\\Admin\\DepensePhotoCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DepensePhotoCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1148 => [[['_route' => 'demo_admin_depense_photo_delete', '_controller' => 'App\\Controller\\Admin\\DepensePhotoCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DepensePhotoCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1158 => [[['_route' => 'demo_admin_depense_photo_detail', '_controller' => 'App\\Controller\\Admin\\DepensePhotoCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DepensePhotoCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1195 => [[['_route' => 'demo_admin_document_edit', '_controller' => 'App\\Controller\\Admin\\DocumentCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DocumentCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1210 => [[['_route' => 'demo_admin_document_delete', '_controller' => 'App\\Controller\\Admin\\DocumentCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DocumentCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1220 => [[['_route' => 'demo_admin_document_detail', '_controller' => 'App\\Controller\\Admin\\DocumentCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DocumentCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1262 => [[['_route' => 'demo_admin_incident_edit', '_controller' => 'App\\Controller\\Admin\\IncidentCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1277 => [[['_route' => 'demo_admin_incident_delete', '_controller' => 'App\\Controller\\Admin\\IncidentCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1287 => [[['_route' => 'demo_admin_incident_detail', '_controller' => 'App\\Controller\\Admin\\IncidentCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1324 => [[['_route' => 'demo_admin_incident_photo_edit', '_controller' => 'App\\Controller\\Admin\\IncidentPhotoCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentPhotoCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1339 => [[['_route' => 'demo_admin_incident_photo_delete', '_controller' => 'App\\Controller\\Admin\\IncidentPhotoCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentPhotoCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1349 => [[['_route' => 'demo_admin_incident_photo_detail', '_controller' => 'App\\Controller\\Admin\\IncidentPhotoCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\IncidentPhotoCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1383 => [[['_route' => 'demo_admin_lot_edit', '_controller' => 'App\\Controller\\Admin\\LotCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\LotCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1398 => [[['_route' => 'demo_admin_lot_delete', '_controller' => 'App\\Controller\\Admin\\LotCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\LotCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1408 => [[['_route' => 'demo_admin_lot_detail', '_controller' => 'App\\Controller\\Admin\\LotCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\LotCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1452 => [[['_route' => 'demo_admin_menue_depense_edit', '_controller' => 'App\\Controller\\Admin\\MenueDepenseCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\MenueDepenseCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1467 => [[['_route' => 'demo_admin_menue_depense_delete', '_controller' => 'App\\Controller\\Admin\\MenueDepenseCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\MenueDepenseCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1477 => [[['_route' => 'demo_admin_menue_depense_detail', '_controller' => 'App\\Controller\\Admin\\MenueDepenseCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\MenueDepenseCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1518 => [[['_route' => 'demo_admin_prestataire_edit', '_controller' => 'App\\Controller\\Admin\\PrestataireCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PrestataireCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1533 => [[['_route' => 'demo_admin_prestataire_delete', '_controller' => 'App\\Controller\\Admin\\PrestataireCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PrestataireCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1543 => [[['_route' => 'demo_admin_prestataire_detail', '_controller' => 'App\\Controller\\Admin\\PrestataireCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PrestataireCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1585 => [[['_route' => 'demo_admin_stock_badge_edit', '_controller' => 'App\\Controller\\Admin\\StockBadgeCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\StockBadgeCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1600 => [[['_route' => 'demo_admin_stock_badge_delete', '_controller' => 'App\\Controller\\Admin\\StockBadgeCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\StockBadgeCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1610 => [[['_route' => 'demo_admin_stock_badge_detail', '_controller' => 'App\\Controller\\Admin\\StockBadgeCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\StockBadgeCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1644 => [[['_route' => 'demo_admin_user_edit', '_controller' => 'App\\Controller\\Admin\\UserCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1659 => [[['_route' => 'demo_admin_user_delete', '_controller' => 'App\\Controller\\Admin\\UserCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1669 => [[['_route' => 'demo_admin_user_detail', '_controller' => 'App\\Controller\\Admin\\UserCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DemoDashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1711 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        1732 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
+        1775 => [[['_route' => '_profiler_font', '_controller' => 'web_profiler.controller.profiler::fontAction'], ['fontName'], null, null, false, false, null]],
+        1813 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
+        1828 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
+        1849 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
+        1863 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
+        1874 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        1910 => [
             [['_route' => 'app_get_batiments_by_copro', '_controller' => 'App\\Controller\\RegistrationController::getBatimentsByCopro'], ['coproId'], ['GET' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
