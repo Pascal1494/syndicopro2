@@ -33,6 +33,7 @@ class Badge
     private ?Lot $lot = null;
 
     #[ORM\OneToOne(targetEntity: self::class, cascade: ['persist', 'remove'])]
+    #[ORM\JoinColumn(nullable: true, onDelete: "SET NULL")]
     private ?self $remplacebadge = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]

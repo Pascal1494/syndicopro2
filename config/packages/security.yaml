@@ -54,6 +54,7 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/profile, roles: ROLE_USER, allow_if: "not is_granted('ROLE_DEMO')" }
         - { path: ^/register, roles: PUBLIC_ACCESS }
         - { path: ^/mon-espace, roles: ROLE_USER }
         - { path: ^/admin, roles: ROLE_GARDIEN }

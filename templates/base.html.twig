@@ -11,6 +11,7 @@
 
         {# IMPORTMAP doit être dans le HEAD pour charger ton CSS perso (assets/styles/app.css) #}
         {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
             {{ importmap('app') }}
         {% endblock %}
 
@@ -25,6 +26,13 @@
         
 
         {{ include('_navbar.html.twig') }}
+
+        {% if app_demo %}
+    <div class="alert alert-warning text-center mb-0">
+        🚧 Version Démo – certaines fonctionnalités sont limitées.
+    </div>
+{% endif %}
+
 
        <main class="flex-shrink-0"> {# Ce bloc va prendre tout l'espace disponible #}
             {% block body %}{% endblock %}

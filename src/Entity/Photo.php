@@ -5,6 +5,8 @@ use App\Repository\PhotoRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PhotoRepository::class)]
+#[ORM\Table(name: 'photo')]
+#[IgnorePurge]
 class Photo
 {
     #[ORM\Id]

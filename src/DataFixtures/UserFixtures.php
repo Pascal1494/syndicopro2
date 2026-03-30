@@ -37,6 +37,43 @@ class UserFixtures extends Fixture implements DependentFixtureInterface// <-- AJ
         $syndic->setPassword($this->hasher->hashPassword($syndic, 'password'));
         $manager->persist($syndic);
 
+        // // 1bis . Création ducompteSyndicDémo;
+        // $demo = new User();
+        // $demo->setEmail('demo@demo.fr');
+        // $demo->setRoles(['ROLE_SYNDIC', 'ROLE_DEMO']); // accès admin + limitations démo
+        // $demo->setNom('Démo');
+        // $demo->setPrenom('Syndic');
+        // $demo->setPassword($this->hasher->hashPassword($demo, 'demo'));
+        // $manager->persist($demo);
+
+        // Optionnel : référence si besoin
+        // $this->addReference('user-demo', $demo);
+
+        // 1ter. Création du compte Président du Conseil Syndical Démo
+        $demoPresident = new User();
+        $demoPresident->setEmail('president.demo@syndic.fr');
+        $demoPresident->setRoles(['ROLE_PRESIDENT', 'ROLE_DEMO']);
+        $demoPresident->setNom('Président');
+        $demoPresident->setPrenom('Démo');
+        $demoPresident->setCopropriete($copro1); // il doit être rattaché à une copro
+        $demoPresident->setPassword($this->hasher->hashPassword($demoPresident, 'demo'));
+        $manager->persist($demoPresident);
+
+        $this->addReference('user-demo-president', $demoPresident);
+
+        // // 1quater. Création du compte Copropriétaire Démo
+        // $demoCopro = new User();
+        // $demoCopro->setEmail('copro.demo@syndic.fr');
+        // $demoCopro->setRoles(['ROLE_PROPRIETAIRE', 'ROLE_DEMO']);
+        // $demoCopro->setNom('Copropriétaire');
+        // $demoCopro->setPrenom('Démo');
+        // $demoCopro->setCopropriete($copro1);
+        // $demoCopro->setTelephone($faker->phoneNumber());
+        // $demoCopro->setPassword($this->hasher->hashPassword($demoCopro, 'demo'));
+        // $manager->persist($demoCopro);
+
+        // $this->addReference('user-demo-copro', $demoCopro);
+
         // 2. Création du Gardien (On le lie à la Copropriété 1 par exemple)
         $gardien = new User();
         $gardien->setEmail('gardien@syndic.fr');

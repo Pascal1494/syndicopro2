@@ -2,4 +2,5 @@
 
 return [PHP_INT_MAX, [
     'App\\Controller\\Admin\\DashboardController' => 'admin',
+    'App\\Controller\\Admin\\DemoDashboardController' => 'demo_admin',
 ]];

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Mode Démo</h1>
+
+    {% if is_demo %}
+        <p>Le mode démo est activé.</p>
+    {% else %}
+        <p>Le mode démo est désactivé.</p>
+    {% endif %}
+{% endblock %}
+

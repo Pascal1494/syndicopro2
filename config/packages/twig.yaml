@@ -1,9 +1,13 @@
 twig:
+    globals:
+        app_demo: '%env(bool:APP_DEMO)%'
     file_name_pattern: '*.twig'
     default_path: '%kernel.project_dir%/templates'
     # ✨ ON AJOUTE CES DEUX LIGNES :
     form_themes:
         - 'bootstrap_5_layout.html.twig'
+     
+
 
 when@test:
     twig:
